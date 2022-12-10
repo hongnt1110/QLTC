@@ -81,8 +81,10 @@
             // 
             this.textMatKhau.Location = new System.Drawing.Point(425, 208);
             this.textMatKhau.Name = "textMatKhau";
+            this.textMatKhau.PasswordChar = '*';
             this.textMatKhau.Size = new System.Drawing.Size(231, 26);
             this.textMatKhau.TabIndex = 4;
+            this.textMatKhau.TextChanged += new System.EventHandler(this.textMatKhau_TextChanged);
             // 
             // btnDangNhap
             // 

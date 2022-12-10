@@ -19,7 +19,13 @@ namespace QLTC
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) 
+            {
+                this.Hide();
+                DangNhap dangNhap = new DangNhap();
+                dangNhap.ShowDialog();
 
+            }
         }
     }
 }

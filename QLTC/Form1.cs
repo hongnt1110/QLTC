@@ -40,6 +40,10 @@ namespace QLTC
                 if(modify.TaiKhoans(query).Count != 0)
                 {
                     MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    ManHinhChinh manHinhChinh = new ManHinhChinh();
+                    manHinhChinh.ShowDialog();
+                    this.Close();
                 }   
                 else
                 {
@@ -50,6 +54,11 @@ namespace QLTC
         }
 
         private void DangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textMatKhau_TextChanged(object sender, EventArgs e)
         {
 
         }
