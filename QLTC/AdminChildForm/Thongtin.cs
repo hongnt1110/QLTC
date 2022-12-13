@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLTC.AdminChildForm
 {
-    public partial class SanhForm : Form
+    public partial class Thongtin : Form
     {
-        public SanhForm()
+        public Thongtin()
         {
             InitializeComponent();
         }

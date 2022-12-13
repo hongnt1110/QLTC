@@ -63,6 +63,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminChildForm\DichVuKhacForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminChildForm\DichVuKhacForm.Designer.cs">
+      <DependentUpon>DichVuKhacForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminChildForm\Thongtin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminChildForm\Thongtin.Designer.cs">
+      <DependentUpon>Thongtin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminChildForm\ThucDonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminChildForm\ThucDonForm.Designer.cs">
+      <DependentUpon>ThucDonForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conection.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -86,6 +104,16 @@
       <DependentUpon>QuenMatkhau.cs</DependentUpon>
     </Compile>
     <Compile Include="TaiKhoan.cs" />
+    <Compile Include="Temporary Class\ThucDon.cs" />
+    <EmbeddedResource Include="AdminChildForm\DichVuKhacForm.resx">
+      <DependentUpon>DichVuKhacForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminChildForm\Thongtin.resx">
+      <DependentUpon>Thongtin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminChildForm\ThucDonForm.resx">
+      <DependentUpon>ThucDonForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,15 +156,6 @@
     <None Include="Resources\Users.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database1.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database1_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database1.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
@@ -147,6 +166,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner-hoi-nghi.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
