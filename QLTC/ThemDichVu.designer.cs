@@ -49,6 +49,7 @@ namespace QLTC
             this.btnExit.TabIndex = 17;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnThem
             // 
