@@ -26,5 +26,12 @@ namespace QLTC
                 dangNhap.ShowDialog ();
             }
         }
+
+        private void dịchVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            QuanLyDichVu quanLyDichVu = new QuanLyDichVu();
+            quanLyDichVu.ShowDialog();
+        }
     }
 }
