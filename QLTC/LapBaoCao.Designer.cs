@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.thang = new System.Windows.Forms.TextBox();
             this.doanhthu = new System.Windows.Forms.TextBox();
             this.soluongtiec = new System.Windows.Forms.TextBox();
             this.tennguoilap = new System.Windows.Forms.TextBox();
@@ -42,12 +43,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.thang = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Wheat;
             this.groupBox1.Controls.Add(this.thang);
             this.groupBox1.Controls.Add(this.doanhthu);
             this.groupBox1.Controls.Add(this.soluongtiec);
@@ -60,12 +61,20 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(131, 103);
+            this.groupBox1.Location = new System.Drawing.Point(80, 97);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(732, 250);
+            this.groupBox1.Size = new System.Drawing.Size(732, 196);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin báo cáo";
+            // 
+            // thang
+            // 
+            this.thang.Location = new System.Drawing.Point(166, 132);
+            this.thang.Name = "thang";
+            this.thang.Size = new System.Drawing.Size(147, 23);
+            this.thang.TabIndex = 10;
+            this.thang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.thang_KeyPress_1);
             // 
             // doanhthu
             // 
@@ -161,7 +170,8 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.Location = new System.Drawing.Point(521, 359);
+            this.button1.ForeColor = System.Drawing.Color.DarkOrange;
+            this.button1.Location = new System.Drawing.Point(314, 325);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(78, 31);
             this.button1.TabIndex = 1;
@@ -172,7 +182,8 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button2.Location = new System.Drawing.Point(719, 359);
+            this.button2.ForeColor = System.Drawing.Color.DarkOrange;
+            this.button2.Location = new System.Drawing.Point(512, 325);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 31);
             this.button2.TabIndex = 2;
@@ -184,8 +195,8 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label6.Location = new System.Drawing.Point(380, 27);
+            this.label6.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label6.Location = new System.Drawing.Point(363, 32);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(152, 29);
             this.label6.TabIndex = 3;
@@ -195,7 +206,8 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button3.Location = new System.Drawing.Point(623, 359);
+            this.button3.ForeColor = System.Drawing.Color.DarkOrange;
+            this.button3.Location = new System.Drawing.Point(416, 325);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(78, 31);
             this.button3.TabIndex = 4;
@@ -203,19 +215,12 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // thang
-            // 
-            this.thang.Location = new System.Drawing.Point(166, 132);
-            this.thang.Name = "thang";
-            this.thang.Size = new System.Drawing.Size(147, 23);
-            this.thang.TabIndex = 10;
-            this.thang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.thang_KeyPress_1);
-            // 
             // LapBaoCao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 572);
+            this.BackColor = System.Drawing.SystemColors.Info;
+            this.ClientSize = new System.Drawing.Size(899, 402);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button2);
