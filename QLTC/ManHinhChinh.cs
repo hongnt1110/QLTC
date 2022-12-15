@@ -48,5 +48,17 @@ namespace QLTC
         {
 
         }
+
+        private void lậpBáoCáoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LapBaoCao add = new LapBaoCao();
+            add.ShowDialog();
+        }
+
+        private void báoCáoDoanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BaoCaoDoanhThu add = new BaoCaoDoanhThu();
+            add.ShowDialog();
+        }
     }
 }
