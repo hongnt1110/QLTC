@@ -8,7 +8,7 @@ namespace QLTC
 {
     class Conection
     {
-        private static string stringConection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\C#\QLTC\QLTC\Database1.mdf;Integrated Security=True";
+        private static string stringConection = @"Data Source=DESKTOP-ICQ34U0\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=True";
 
         public static SqlConnection GetSqlConnection()
         {
