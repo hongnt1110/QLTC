@@ -32,25 +32,24 @@ namespace QLTC
         {
             string tentk = textTenTaiKhoan.Text;
             string matkhau = textMatKhau.Text;
-            if(tentk.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!"); }
+            if (tentk.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!"); }
             else if (matkhau.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu!"); }
             else
             {
-                string query = "Select * from TaiKhoan where TenTaiKhoan = '" + tentk + "' and MatKhau = '"+matkhau+"'";
-                if(modify.TaiKhoans(query).Count != 0)
+                string query = "Select * from TaiKhoan where TenTaiKhoan = '" + tentk + "' and MatKhau = '" + matkhau + "'";
+                if (modify.TaiKhoans(query).Count != 0)
                 {
                     MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
                     ManHinhChinh manHinhChinh = new ManHinhChinh();
                     manHinhChinh.ShowDialog();
                     this.Close();
-                }   
+                }
                 else
                 {
-                    MessageBox.Show("Tên tài khoản hoặc mật khẩu không chính xác!","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }    
-            }    
-        
+                    MessageBox.Show("Tên tài khoản hoặc mật khẩu không chính xác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         private void DangNhap_Load(object sender, EventArgs e)

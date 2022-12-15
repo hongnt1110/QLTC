@@ -31,9 +31,9 @@ namespace QLTC
             else if(donGiaBan.Text == "Nhập đơn giá bàn")
             {
                 MessageBox.Show("Vui lòng nhập đơn giá bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }else if (ghiChu.Text == "Nhập ghi chú")
+            }else if (ghiChu.Text == "Nhập ghi chú" || ghiChu.Text == "")
             {
-                MessageBox.Show("Vui lòng ghi chú", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng nhập ghi chú", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

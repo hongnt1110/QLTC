@@ -147,5 +147,12 @@ namespace QLTC
                 danhSachSanh.DataSource = DanhSachSanh.SearchSanh('%' + timSanh.Text + '%');
             }
         }
+
+        private void btnLoaiSanh_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DanhSachLoaiSanh loaiSanh = new DanhSachLoaiSanh();
+            loaiSanh.ShowDialog();
+        }
     }
 }

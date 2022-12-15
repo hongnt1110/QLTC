@@ -71,6 +71,7 @@ namespace QLTC
             this.mONANTableAdapter = new QLTC.DataDichVuTableAdapters.MONANTableAdapter();
             this.sANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sANHTableAdapter = new QLTC.DataDichVuTableAdapters.SANHTableAdapter();
+            this.btnLoaiSanh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachSanh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachThucDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachDichVu)).BeginInit();
@@ -482,6 +483,7 @@ namespace QLTC
             // 
             this.sanhCuoi.BackColor = System.Drawing.Color.Wheat;
             this.sanhCuoi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.sanhCuoi.Controls.Add(this.btnLoaiSanh);
             this.sanhCuoi.Controls.Add(this.btnSuaSanh);
             this.sanhCuoi.Controls.Add(this.btnXoaSanh);
             this.sanhCuoi.Controls.Add(this.btnThemSanh);
@@ -531,6 +533,19 @@ namespace QLTC
             // sANHTableAdapter
             // 
             this.sANHTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnLoaiSanh
+            // 
+            this.btnLoaiSanh.BackColor = System.Drawing.Color.White;
+            this.btnLoaiSanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoaiSanh.ForeColor = System.Drawing.Color.Orange;
+            this.btnLoaiSanh.Location = new System.Drawing.Point(8, 344);
+            this.btnLoaiSanh.Name = "btnLoaiSanh";
+            this.btnLoaiSanh.Size = new System.Drawing.Size(272, 26);
+            this.btnLoaiSanh.TabIndex = 15;
+            this.btnLoaiSanh.Text = "Danh sách loại sảnh";
+            this.btnLoaiSanh.UseVisualStyleBackColor = false;
+            this.btnLoaiSanh.Click += new System.EventHandler(this.btnLoaiSanh_Click);
             // 
             // QuanLyDichVu
             // 
@@ -596,5 +611,6 @@ namespace QLTC
         private DataDichVuTableAdapters.MONANTableAdapter mONANTableAdapter;
         private System.Windows.Forms.BindingSource sANHBindingSource;
         private DataDichVuTableAdapters.SANHTableAdapter sANHTableAdapter;
+        private System.Windows.Forms.Button btnLoaiSanh;
     }
 }

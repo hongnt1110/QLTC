@@ -33,5 +33,20 @@ namespace QLTC
             QuanLyDichVu quanLyDichVu = new QuanLyDichVu();
             quanLyDichVu.ShowDialog();
         }
+
+        private void báoCáoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sảnhCướiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ManHinhChinh_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
