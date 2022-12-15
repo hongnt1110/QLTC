@@ -2,6 +2,12 @@
 
 USE QLTC
 
+CREATE TABLE TAIKHOAN(
+	TenTaiKhoan varchar(50) not null,
+	MatKhau varchar(50) not null,
+	Email varchar(50) not null,
+	CONSTRAINT PK_TAIKHOAN PRIMARY KEY (TenTaiKhoan)
+)
 CREATE TABLE LOAISANH(
 	MaLoaiSanh int identity(1,1) not null,
 	LoaiSanh nvarchar(100) not null,
