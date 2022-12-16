@@ -29,15 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.thang = new System.Windows.Forms.TextBox();
             this.doanhthu = new System.Windows.Forms.TextBox();
             this.soluongtiec = new System.Windows.Forms.TextBox();
-            this.tennguoilap = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ngaylap = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -49,36 +45,25 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Wheat;
-            this.groupBox1.Controls.Add(this.thang);
             this.groupBox1.Controls.Add(this.doanhthu);
             this.groupBox1.Controls.Add(this.soluongtiec);
-            this.groupBox1.Controls.Add(this.tennguoilap);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.ngaylap);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.groupBox1.Location = new System.Drawing.Point(80, 97);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(732, 196);
+            this.groupBox1.Size = new System.Drawing.Size(732, 149);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin báo cáo";
-            // 
-            // thang
-            // 
-            this.thang.Location = new System.Drawing.Point(166, 132);
-            this.thang.Name = "thang";
-            this.thang.Size = new System.Drawing.Size(147, 23);
-            this.thang.TabIndex = 10;
-            this.thang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.thang_KeyPress_1);
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // doanhthu
             // 
-            this.doanhthu.Location = new System.Drawing.Point(469, 94);
+            this.doanhthu.Location = new System.Drawing.Point(465, 50);
             this.doanhthu.Name = "doanhthu";
             this.doanhthu.Size = new System.Drawing.Size(147, 23);
             this.doanhthu.TabIndex = 9;
@@ -94,20 +79,11 @@
             this.soluongtiec.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             this.soluongtiec.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.soluongtiec_KeyPress);
             // 
-            // tennguoilap
-            // 
-            this.tennguoilap.Location = new System.Drawing.Point(469, 45);
-            this.tennguoilap.Name = "tennguoilap";
-            this.tennguoilap.Size = new System.Drawing.Size(147, 23);
-            this.tennguoilap.TabIndex = 6;
-            this.tennguoilap.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.tennguoilap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tennguoilap_KeyPress);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(361, 94);
+            this.label5.Location = new System.Drawing.Point(357, 50);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 17);
             this.label5.TabIndex = 5;
@@ -135,28 +111,6 @@
             this.ngaylap.Value = new System.DateTime(2022, 12, 14, 0, 0, 0, 0);
             this.ngaylap.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(41, 138);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Tháng";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(361, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tên người lập";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -171,7 +125,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.button1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.button1.Location = new System.Drawing.Point(314, 325);
+            this.button1.Location = new System.Drawing.Point(304, 278);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(78, 31);
             this.button1.TabIndex = 1;
@@ -183,7 +137,7 @@
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.button2.ForeColor = System.Drawing.Color.DarkOrange;
-            this.button2.Location = new System.Drawing.Point(512, 325);
+            this.button2.Location = new System.Drawing.Point(507, 278);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 31);
             this.button2.TabIndex = 2;
@@ -196,18 +150,18 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.label6.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label6.Location = new System.Drawing.Point(363, 32);
+            this.label6.Location = new System.Drawing.Point(331, 25);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(152, 29);
+            this.label6.Size = new System.Drawing.Size(214, 29);
             this.label6.TabIndex = 3;
-            this.label6.Text = "Lập Báo Cáo";
+            this.label6.Text = "Lập Báo Cáo Ngày";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.button3.ForeColor = System.Drawing.Color.DarkOrange;
-            this.button3.Location = new System.Drawing.Point(416, 325);
+            this.button3.Location = new System.Drawing.Point(406, 278);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(78, 31);
             this.button3.TabIndex = 4;
@@ -239,19 +193,15 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DateTimePicker ngaylap;
         private System.Windows.Forms.TextBox doanhthu;
         private System.Windows.Forms.TextBox soluongtiec;
-        private System.Windows.Forms.TextBox tennguoilap;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox thang;
     }
 }

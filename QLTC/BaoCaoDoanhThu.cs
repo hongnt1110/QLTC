@@ -61,8 +61,7 @@ namespace QLTC
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LapBaoCao add = new LapBaoCao();
-            add.ShowDialog();
+            
         }
     }
 }
