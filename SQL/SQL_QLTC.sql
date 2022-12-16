@@ -2,6 +2,9 @@
 
 USE QLTC
 
+SELECT FORMAT (getdate(), 'dd/MM/yyyy ') as date
+SET DATEFORMAT dmy;  
+GO  
 CREATE TABLE TAIKHOAN(
 	TenTaiKhoan varchar(50) not null,
 	MatKhau varchar(50) not null,
@@ -59,6 +62,7 @@ CREATE TABLE PHIEUDATTIEC(
 	TienCoc	money not null,
 	SoLuongBan	int not null,
 	MaCa	int not null,
+	GiaBan money not null
 	CONSTRAINT PK_PHIEUDT PRIMARY KEY (MaPhieuDT),
 	CONSTRAINT FK_PHIEU_KH FOREIGN KEY (MaKH) REFERENCES KHACHHANG(MaKH),
 	CONSTRAINT FK_PHIEU_CA FOREIGN KEY (MaCa) REFERENCES CA(MaCa)
@@ -74,28 +78,23 @@ CREATE TABLE CT_DICHVU(
 )
 CREATE TABLE CT_MONAN(
 	MaCT_MonAn	int identity(1,1) not null,
-	MaMonAn	int not null,
-	MaPhieuDT	int not null,
-	DonGia	money not null,
+	MaMonAn int not null,
+	MaPhieuDT	int not null,	
+	DonGia money not null,
 	CONSTRAINT PK_CTMA PRIMARY KEY (MaCT_MonAn),
 	CONSTRAINT FK_CTMA_MA FOREIGN KEY (MaMonAn) REFERENCES MONAN(MaMonAn),
 	CONSTRAINT FK_CTMA_PHIEU FOREIGN KEY (MaPhieuDT) REFERENCES PHIEUDATTIEC(MaPhieuDT)
 )
 CREATE TABLE HOADON(
 	MaHoaDon	int identity(1,1) not null,
-	NgayThanhToan	date not null,
-	TongTienHD	money not null,
-	TienConLai	money not null,
+	NgayThanhToan	date,
+	TongTienHD	money,
+	TienConLai	money,
+	MaPhieuDT	int,
 	CONSTRAINT PK_HOADON PRIMARY KEY (MaHoaDon),
+	CONSTRAINT FK_HD_PHIEU FOREIGN KEY (MaPhieuDT) REFERENCES PHIEUDATTIEC(MaPhieuDT)
 )
-CREATE TABLE CT_HOADON(
-	MaCT_HoaDon	int identity(1,1) not null,
-	MaHoaDon	int not null,
-	MaPhieuDT	int not null,
-	CONSTRAINT PK_CTHD PRIMARY KEY (MaCT_HoaDon),
-	CONSTRAINT FK_CTHD_HD FOREIGN KEY (MaHoaDon) REFERENCES HOADON(MaHoaDon),
-	CONSTRAINT FK_CTHD_PHIEU FOREIGN KEY (MaPhieuDT) REFERENCES PHIEUDATTIEC(MaPhieuDT)
-)
+
 CREATE TABLE DOANHSO(
 	MaDoanhSo int identity(1,1) not null,
 	NgayLap	date not null,
@@ -120,3 +119,60 @@ CREATE TABLE THAMSO(
 )
 Insert into THAMSO VALUES('ApDungQuyDinhPhat',1);
 Insert into THAMSO VALUES('TiLePhat',0.01);
+
+/*thêm khách hàng*/
+insert into KHACHHANG values ('Nam', 'TP HCM', '00000000')
+insert into KHACHHANG values (N'Nữ', 'TP HCM', '023232100')
+insert into KHACHHANG values (N'Hải', N'Thanh Hóa', '0123213423')
+select*from KHACHHANG
+
+/*thêm ca*/
+insert into CA values ('Sáng', '9H00 - 12H00')
+insert into CA values ('Trưa', '12H00 - 15H00')
+insert into CA values (N'Tối', '18H00 - 21H00')
+select *from CA
+
+/*Thêm loại sảnh*/
+insert into LOAISANH values ('A', 10000000)
+insert into LOAISANH values ('B', 20000000)
+insert into LOAISANH values ('C', 30000000)
+insert into LOAISANH values ('D', 40000000)
+insert into LOAISANH values ('E', 40000000)
+select *from LOAISANH
+/*thêm sảnh */
+insert into SANH values ('Rose',1,100, 1000000, N'Trống')
+insert into SANH values ('Tulip',2,120, 1100000, N'Trống')
+insert into SANH values ('Purple',3,150, 1200000, N'Trống')
+insert into SANH values ('Pink',4,100, 1400000, N'Trống')
+insert into SANH values ('Purple',5,150, 1200000, N'Trống')
+select *from SANH
+
+/*thêm phiếu đặt tiệc*/
+insert into PHIEUDATTIEC values (1, '16/12/2022', 'Nam', N'Nữ',1,10000000,70,1,1350000)
+insert into PHIEUDATTIEC values (3, '16/12/2022', N'Hải', N'Li',2,11000000,100,3,1500000)
+select *from PHIEUDATTIEC
+select *from HOADON
+
+/*Trigger tự động thêm hóa đơn mỗi khi thêm phiếu đặt tiệc*/
+create trigger HD_PHIEUDATTIEC_INSERTHD
+on PHIEUDATTIEC
+for insert
+as
+begin
+	--Xác định biến
+	declare @MaPhieuDatTiec int, @TongTienHoaDon money, @TienConLai money
+	--Gán giá trị cho biến
+	select @MaPhieuDatTiec = MaPhieuDT from inserted
+	
+	select @TongTienHoaDon = inserted.GiaBan*inserted.SoLuongBan + LOAISANH.DonGia from inserted, SANH, LOAISANH where inserted.MaSanh = SANH.MaSanh 
+	and SANH.MaLoaiSanh = LOAISANH.MaLoaiSanh
+	select @TienConLai = @TongTienHoaDon - inserted.TienCoc from inserted
+	insert into HOADON values (null, @TongTienHoaDon,@TienConLai,@MaPhieuDatTiec)
+	print ('Da tu dong them hoa don')
+end 
+
+select HOADON.MaHoaDon, HOADON.MaPhieuDT,HOADON.NgayThanhToan, HOADON.TienConLai,HOADON.TongTienHD,PHIEUDATTIEC.TienCoc
+from PHIEUDATTIEC, HOADON
+where PHIEUDATTIEC.MaPhieuDT = HOADON.MaPhieuDT
+
+

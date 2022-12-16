@@ -67,10 +67,10 @@ namespace QLTC
 
         private void button3_Click(object sender, EventArgs e)
         {
-            tennguoilap.Text = "";
+            //tennguoilap.Text = "";
             soluongtiec.Text = "";
             doanhthu.Text = "";
-            thang.Text = "";
+            //thang.Text = "";
         }
         private void thang_TextChanged(object sender, EventArgs e)
         {
