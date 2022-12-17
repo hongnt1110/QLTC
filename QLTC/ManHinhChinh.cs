@@ -41,7 +41,9 @@ namespace QLTC
 
         private void sảnhCướiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            //this.Hide();
+            //QuanLyDichVu quanLyDichVu = new QuanLyDichVu(2);
+            //quanLyDichVu.ShowDialog();
         }
 
         private void ManHinhChinh_Load(object sender, EventArgs e)

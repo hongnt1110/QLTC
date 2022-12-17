@@ -34,7 +34,7 @@ namespace QLTC
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            DialogResult xacNhan = MessageBox.Show("Có muốn lưu thay đổi dịch vụ không?", "Xác nhận lưu loại sảnh", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult xacNhan = MessageBox.Show("Có muốn lưu thay đổi dịch vụ không?", "Xác nhận lưu dịch vụ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (xacNhan == DialogResult.Yes)
             {
                 int gia = (int)Math.Round(float.Parse(donGiaDichVu.Text, CultureInfo.InvariantCulture.NumberFormat));

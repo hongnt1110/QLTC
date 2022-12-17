@@ -29,11 +29,14 @@ namespace QLTC
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label7 = new System.Windows.Forms.Label();
             this.ghiChu = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.soLuongBan = new System.Windows.Forms.TextBox();
             this.loaiSanh = new System.Windows.Forms.ComboBox();
+            this.lOAISANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataDichVu = new QLTC.DataDichVu();
             this.label5 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -44,6 +47,9 @@ namespace QLTC
             this.label2 = new System.Windows.Forms.Label();
             this.maSanh = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lOAISANHTableAdapter = new QLTC.DataDichVuTableAdapters.LOAISANHTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.lOAISANHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataDichVu)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -93,6 +99,9 @@ namespace QLTC
             // 
             // loaiSanh
             // 
+            this.loaiSanh.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.lOAISANHBindingSource, "MaLoaiSanh", true));
+            this.loaiSanh.DataSource = this.lOAISANHBindingSource;
+            this.loaiSanh.DisplayMember = "LoaiSanh";
             this.loaiSanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loaiSanh.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.loaiSanh.FormattingEnabled = true;
@@ -100,7 +109,17 @@ namespace QLTC
             this.loaiSanh.Name = "loaiSanh";
             this.loaiSanh.Size = new System.Drawing.Size(207, 28);
             this.loaiSanh.TabIndex = 34;
-            this.loaiSanh.Text = "-- Chọn loại sảnh --";
+            this.loaiSanh.ValueMember = "MaLoaiSanh";
+            // 
+            // lOAISANHBindingSource
+            // 
+            this.lOAISANHBindingSource.DataMember = "LOAISANH";
+            this.lOAISANHBindingSource.DataSource = this.dataDichVu;
+            // 
+            // dataDichVu
+            // 
+            this.dataDichVu.DataSetName = "DataDichVu";
+            this.dataDichVu.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label5
             // 
@@ -125,6 +144,7 @@ namespace QLTC
             this.btnExit.TabIndex = 32;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnLuu
             // 
@@ -197,13 +217,14 @@ namespace QLTC
             // 
             // maSanh
             // 
-            this.maSanh.BackColor = System.Drawing.Color.White;
+            this.maSanh.BackColor = System.Drawing.Color.Gainsboro;
             this.maSanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maSanh.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.maSanh.Location = new System.Drawing.Point(108, 55);
             this.maSanh.Name = "maSanh";
             this.maSanh.Size = new System.Drawing.Size(217, 26);
             this.maSanh.TabIndex = 25;
+            this.maSanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -211,11 +232,15 @@ namespace QLTC
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Orange;
-            this.label1.Location = new System.Drawing.Point(86, 9);
+            this.label1.Location = new System.Drawing.Point(44, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 31);
+            this.label1.Size = new System.Drawing.Size(262, 31);
             this.label1.TabIndex = 24;
-            this.label1.Text = "THÊM SẢNH";
+            this.label1.Text = "THÔNG TIN SẢNH";
+            // 
+            // lOAISANHTableAdapter
+            // 
+            this.lOAISANHTableAdapter.ClearBeforeFill = true;
             // 
             // SuaSanh
             // 
@@ -240,6 +265,9 @@ namespace QLTC
             this.Controls.Add(this.label1);
             this.Name = "SuaSanh";
             this.Text = "SuaSanh";
+            this.Load += new System.EventHandler(this.SuaSanh_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.lOAISANHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataDichVu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,5 +290,8 @@ namespace QLTC
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox maSanh;
         private System.Windows.Forms.Label label1;
+        private DataDichVu dataDichVu;
+        private System.Windows.Forms.BindingSource lOAISANHBindingSource;
+        private DataDichVuTableAdapters.LOAISANHTableAdapter lOAISANHTableAdapter;
     }
 }

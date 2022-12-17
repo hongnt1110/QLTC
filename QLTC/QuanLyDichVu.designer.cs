@@ -108,6 +108,7 @@ namespace QLTC
             this.btnSuaSanh.TabIndex = 14;
             this.btnSuaSanh.Text = "Sửa";
             this.btnSuaSanh.UseVisualStyleBackColor = false;
+            this.btnSuaSanh.Click += new System.EventHandler(this.btnSuaSanh_Click);
             // 
             // btnXoaSanh
             // 

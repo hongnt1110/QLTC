@@ -16,6 +16,10 @@ namespace QLTC
         {
             InitializeComponent();
         }
+        public QuanLyDichVu(int a):this()
+        {
+            //tabDichVu.TabPages[a].SuspendLa;
+        }
         private void QuanLyDichVu_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dataDichVu.SANH' table. You can move, or remove it, as needed.
@@ -196,7 +200,26 @@ namespace QLTC
                 danhSachSanh.DataSource = DanhSachSanh.SearchSanh('%' + timSanh.Text + '%');
             }
         }
-
+        private void btnSuaSanh_Click(object sender, EventArgs e)
+        {
+            if (danhSachSanh.CurrentRow == null)
+            {
+                MessageBox.Show("Hãy chọn sảnh để sửa?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                danhSachSanh.DataSource = DanhSachSanh.ListSanh();
+            }
+            else
+            {
+                string ma = danhSachSanh.CurrentRow.Cells[0].Value.ToString();
+                string ten = danhSachSanh.CurrentRow.Cells[1].Value.ToString();
+                string loai = danhSachSanh.CurrentRow.Cells[2].Value.ToString();
+                string soLuong = danhSachSanh.CurrentRow.Cells[3].Value.ToString();
+                string donGiaBan = danhSachSanh.CurrentRow.Cells[4].Value.ToString();
+                string ghi = danhSachSanh.CurrentRow.Cells[5].Value.ToString();
+                SuaSanh suaSanh = new SuaSanh(ma, ten, loai,soLuong, donGiaBan,ghi);
+                suaSanh.ShowDialog();
+                danhSachSanh.DataSource = DanhSachSanh.ListSanh();
+            }
+        }
         private void btnLoaiSanh_Click(object sender, EventArgs e)
         {
             this.Hide();

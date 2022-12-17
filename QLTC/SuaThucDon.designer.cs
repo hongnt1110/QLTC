@@ -51,6 +51,7 @@ namespace QLTC
             this.btnExit.TabIndex = 17;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnLuu
             // 
@@ -123,7 +124,7 @@ namespace QLTC
             // 
             // maMonAn
             // 
-            this.maMonAn.BackColor = System.Drawing.Color.White;
+            this.maMonAn.BackColor = System.Drawing.Color.Gainsboro;
             this.maMonAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maMonAn.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.maMonAn.Location = new System.Drawing.Point(128, 55);
@@ -136,7 +137,7 @@ namespace QLTC
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Coral;
+            this.label1.ForeColor = System.Drawing.Color.Orange;
             this.label1.Location = new System.Drawing.Point(24, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(296, 31);
