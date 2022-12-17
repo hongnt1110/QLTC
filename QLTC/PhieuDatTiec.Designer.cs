@@ -80,7 +80,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(738, 54);
             this.panel1.TabIndex = 0;
@@ -122,7 +122,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 54);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(738, 155);
             this.panel2.TabIndex = 1;
@@ -131,7 +131,7 @@
             // 
             this.txbNgayDaiTiec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txbNgayDaiTiec.Location = new System.Drawing.Point(604, 54);
-            this.txbNgayDaiTiec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbNgayDaiTiec.Margin = new System.Windows.Forms.Padding(2);
             this.txbNgayDaiTiec.Name = "txbNgayDaiTiec";
             this.txbNgayDaiTiec.Size = new System.Drawing.Size(126, 20);
             this.txbNgayDaiTiec.TabIndex = 18;
@@ -140,7 +140,7 @@
             // 
             this.txbTienCoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txbTienCoc.Location = new System.Drawing.Point(604, 104);
-            this.txbTienCoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbTienCoc.Margin = new System.Windows.Forms.Padding(2);
             this.txbTienCoc.Name = "txbTienCoc";
             this.txbTienCoc.Size = new System.Drawing.Size(126, 20);
             this.txbTienCoc.TabIndex = 17;
@@ -149,7 +149,7 @@
             // 
             this.txbMaCa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txbMaCa.Location = new System.Drawing.Point(604, 11);
-            this.txbMaCa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbMaCa.Margin = new System.Windows.Forms.Padding(2);
             this.txbMaCa.Name = "txbMaCa";
             this.txbMaCa.Size = new System.Drawing.Size(126, 20);
             this.txbMaCa.TabIndex = 15;
@@ -158,7 +158,7 @@
             // 
             this.txbSLBan.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txbSLBan.Location = new System.Drawing.Point(358, 104);
-            this.txbSLBan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbSLBan.Margin = new System.Windows.Forms.Padding(2);
             this.txbSLBan.Name = "txbSLBan";
             this.txbSLBan.Size = new System.Drawing.Size(119, 20);
             this.txbSLBan.TabIndex = 14;
@@ -167,7 +167,7 @@
             // 
             this.txbCoDau.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txbCoDau.Location = new System.Drawing.Point(358, 57);
-            this.txbCoDau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbCoDau.Margin = new System.Windows.Forms.Padding(2);
             this.txbCoDau.Name = "txbCoDau";
             this.txbCoDau.Size = new System.Drawing.Size(119, 20);
             this.txbCoDau.TabIndex = 13;
@@ -176,7 +176,7 @@
             // 
             this.txbMaKhachHang.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txbMaKhachHang.Location = new System.Drawing.Point(358, 11);
-            this.txbMaKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbMaKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.txbMaKhachHang.Name = "txbMaKhachHang";
             this.txbMaKhachHang.Size = new System.Drawing.Size(119, 20);
             this.txbMaKhachHang.TabIndex = 12;
@@ -184,7 +184,7 @@
             // txbSanh
             // 
             this.txbSanh.Location = new System.Drawing.Point(79, 104);
-            this.txbSanh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbSanh.Margin = new System.Windows.Forms.Padding(2);
             this.txbSanh.Name = "txbSanh";
             this.txbSanh.Size = new System.Drawing.Size(126, 20);
             this.txbSanh.TabIndex = 11;
@@ -192,7 +192,7 @@
             // txbChuRe
             // 
             this.txbChuRe.Location = new System.Drawing.Point(79, 57);
-            this.txbChuRe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbChuRe.Margin = new System.Windows.Forms.Padding(2);
             this.txbChuRe.Name = "txbChuRe";
             this.txbChuRe.Size = new System.Drawing.Size(126, 20);
             this.txbChuRe.TabIndex = 10;
@@ -200,7 +200,7 @@
             // txbMaPhieu
             // 
             this.txbMaPhieu.Location = new System.Drawing.Point(79, 11);
-            this.txbMaPhieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbMaPhieu.Margin = new System.Windows.Forms.Padding(2);
             this.txbMaPhieu.Name = "txbMaPhieu";
             this.txbMaPhieu.Size = new System.Drawing.Size(126, 20);
             this.txbMaPhieu.TabIndex = 9;
@@ -314,7 +314,7 @@
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 209);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(28, 400);
             this.panel3.TabIndex = 2;
@@ -323,7 +323,7 @@
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(713, 209);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(25, 400);
             this.panel4.TabIndex = 3;
@@ -333,7 +333,7 @@
             this.panel5.Controls.Add(this.label11);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(28, 209);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(685, 32);
             this.panel5.TabIndex = 4;
@@ -354,7 +354,7 @@
             // 
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel6.Location = new System.Drawing.Point(28, 577);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(685, 32);
             this.panel6.TabIndex = 5;
@@ -377,7 +377,7 @@
             this.MaCa});
             this.dgvPhieuDacTiec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPhieuDacTiec.Location = new System.Drawing.Point(28, 241);
-            this.dgvPhieuDacTiec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPhieuDacTiec.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPhieuDacTiec.Name = "dgvPhieuDacTiec";
             this.dgvPhieuDacTiec.ReadOnly = true;
             this.dgvPhieuDacTiec.RowHeadersVisible = false;
@@ -485,7 +485,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PhieuDatTiec";
             this.Text = "PhieuDatTiec";
             this.Load += new System.EventHandler(this.PhieuDatTiec_Load);

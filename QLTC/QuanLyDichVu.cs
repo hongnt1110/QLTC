@@ -18,7 +18,7 @@ namespace QLTC
         }
         public QuanLyDichVu(int a):this()
         {
-            //tabDichVu.TabPages[a].SuspendLa;
+            tabDichVu.SelectedTab = tabDichVu.TabPages[a];
         }
         private void QuanLyDichVu_Load(object sender, EventArgs e)
         {
