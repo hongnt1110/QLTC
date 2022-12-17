@@ -163,6 +163,12 @@
     <Compile Include="SuaDichVu.designer.cs">
       <DependentUpon>SuaDichVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuaLoaiSanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaLoaiSanh.Designer.cs">
+      <DependentUpon>SuaLoaiSanh.cs</DependentUpon>
+    </Compile>
     <Compile Include="SuaSanh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,12 @@
     </Compile>
     <Compile Include="ThemDichVu.designer.cs">
       <DependentUpon>ThemDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemLoaiSanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemLoaiSanh.Designer.cs">
+      <DependentUpon>ThemLoaiSanh.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemSanh.cs">
       <SubType>Form</SubType>
@@ -206,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCaoDoanhThu.resx">
       <DependentUpon>BaoCaoDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhSachLoaiSanh.resx">
+      <DependentUpon>DanhSachLoaiSanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -244,6 +259,9 @@
     <EmbeddedResource Include="SuaDichVu.resx">
       <DependentUpon>SuaDichVu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SuaLoaiSanh.resx">
+      <DependentUpon>SuaLoaiSanh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SuaSanh.resx">
       <DependentUpon>SuaSanh.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThemDichVu.resx">
       <DependentUpon>ThemDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemLoaiSanh.resx">
+      <DependentUpon>ThemLoaiSanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemSanh.resx">
       <DependentUpon>ThemSanh.cs</DependentUpon>

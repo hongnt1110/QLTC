@@ -65,20 +65,20 @@ namespace QLTC
             this.btnXoaThucDon = new System.Windows.Forms.Button();
             this.dichVu = new System.Windows.Forms.TabPage();
             this.sanhCuoi = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.btnLoaiSanh = new System.Windows.Forms.Button();
+            this.tabDichVu = new System.Windows.Forms.TabControl();
             this.dataDichVu = new QLTC.DataDichVu();
             this.mONANBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mONANTableAdapter = new QLTC.DataDichVuTableAdapters.MONANTableAdapter();
             this.sANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sANHTableAdapter = new QLTC.DataDichVuTableAdapters.SANHTableAdapter();
-            this.btnLoaiSanh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachSanh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachThucDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachDichVu)).BeginInit();
             this.thucDon.SuspendLayout();
             this.dichVu.SuspendLayout();
             this.sanhCuoi.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabDichVu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataDichVu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONANBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sANHBindingSource)).BeginInit();
@@ -500,16 +500,29 @@ namespace QLTC
             this.sanhCuoi.TabIndex = 2;
             this.sanhCuoi.Text = "Sảnh";
             // 
-            // tabControl1
+            // btnLoaiSanh
             // 
-            this.tabControl1.Controls.Add(this.thucDon);
-            this.tabControl1.Controls.Add(this.dichVu);
-            this.tabControl1.Controls.Add(this.sanhCuoi);
-            this.tabControl1.Location = new System.Drawing.Point(10, 42);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(898, 407);
-            this.tabControl1.TabIndex = 16;
+            this.btnLoaiSanh.BackColor = System.Drawing.Color.White;
+            this.btnLoaiSanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoaiSanh.ForeColor = System.Drawing.Color.Orange;
+            this.btnLoaiSanh.Location = new System.Drawing.Point(8, 344);
+            this.btnLoaiSanh.Name = "btnLoaiSanh";
+            this.btnLoaiSanh.Size = new System.Drawing.Size(272, 26);
+            this.btnLoaiSanh.TabIndex = 15;
+            this.btnLoaiSanh.Text = "Danh sách loại sảnh";
+            this.btnLoaiSanh.UseVisualStyleBackColor = false;
+            this.btnLoaiSanh.Click += new System.EventHandler(this.btnLoaiSanh_Click);
+            // 
+            // tabDichVu
+            // 
+            this.tabDichVu.Controls.Add(this.thucDon);
+            this.tabDichVu.Controls.Add(this.dichVu);
+            this.tabDichVu.Controls.Add(this.sanhCuoi);
+            this.tabDichVu.Location = new System.Drawing.Point(10, 42);
+            this.tabDichVu.Name = "tabDichVu";
+            this.tabDichVu.SelectedIndex = 0;
+            this.tabDichVu.Size = new System.Drawing.Size(898, 407);
+            this.tabDichVu.TabIndex = 16;
             // 
             // dataDichVu
             // 
@@ -534,19 +547,6 @@ namespace QLTC
             // 
             this.sANHTableAdapter.ClearBeforeFill = true;
             // 
-            // btnLoaiSanh
-            // 
-            this.btnLoaiSanh.BackColor = System.Drawing.Color.White;
-            this.btnLoaiSanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoaiSanh.ForeColor = System.Drawing.Color.Orange;
-            this.btnLoaiSanh.Location = new System.Drawing.Point(8, 344);
-            this.btnLoaiSanh.Name = "btnLoaiSanh";
-            this.btnLoaiSanh.Size = new System.Drawing.Size(272, 26);
-            this.btnLoaiSanh.TabIndex = 15;
-            this.btnLoaiSanh.Text = "Danh sách loại sảnh";
-            this.btnLoaiSanh.UseVisualStyleBackColor = false;
-            this.btnLoaiSanh.Click += new System.EventHandler(this.btnLoaiSanh_Click);
-            // 
             // QuanLyDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -555,7 +555,7 @@ namespace QLTC
             this.ClientSize = new System.Drawing.Size(920, 494);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabDichVu);
             this.Name = "QuanLyDichVu";
             this.Text = "QuanLyDichVu";
             this.Load += new System.EventHandler(this.QuanLyDichVu_Load);
@@ -568,7 +568,7 @@ namespace QLTC
             this.dichVu.PerformLayout();
             this.sanhCuoi.ResumeLayout(false);
             this.sanhCuoi.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.tabDichVu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataDichVu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONANBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sANHBindingSource)).EndInit();
@@ -605,7 +605,7 @@ namespace QLTC
         private System.Windows.Forms.Button btnXoaThucDon;
         private System.Windows.Forms.TabPage dichVu;
         private System.Windows.Forms.TabPage sanhCuoi;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabDichVu;
         private DataDichVu dataDichVu;
         private System.Windows.Forms.BindingSource mONANBindingSource;
         private DataDichVuTableAdapters.MONANTableAdapter mONANTableAdapter;

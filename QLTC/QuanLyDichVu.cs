@@ -47,19 +47,40 @@ namespace QLTC
         }
         private void btnSuaThucDon_Click(object sender, EventArgs e)
         {
-            SuaThucDon suaThucDon = new SuaThucDon();
-            suaThucDon.ShowDialog();
+            if (danhSachThucDon.CurrentRow == null)
+            {
+                MessageBox.Show("Hãy chọn dịch vụ để sửa?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                danhSachThucDon.DataSource = DanhSachMonAn.ListThucDon();
+            }
+            else
+            {
+                string ma = danhSachThucDon.CurrentRow.Cells[0].Value.ToString();
+                string ten = danhSachThucDon.CurrentRow.Cells[1].Value.ToString();
+                string donGia = danhSachThucDon.CurrentRow.Cells[2].Value.ToString();
+                SuaThucDon suaThucDon = new SuaThucDon(ma, ten, donGia);
+                suaThucDon.ShowDialog();
+                danhSachThucDon.DataSource = DanhSachMonAn.ListThucDon();
+            }
         }
         private void btnXoaThucDon_Click(object sender, EventArgs e)
         {
-            int monAn = int.Parse(danhSachThucDon.CurrentRow.Cells[0].Value.ToString());
-            DialogResult xacNhan = MessageBox.Show("Có muốn xóa món ăn không?", "Xác nhận xóa món ăn", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if(xacNhan == DialogResult.Yes)
+            if (danhSachThucDon.CurrentRow == null)
             {
-            DanhSachMonAn.DeleteThucDon(monAn);
-            MessageBox.Show("Xóa thành công","Thông Báo",MessageBoxButtons.OK);
-            danhSachThucDon.DataSource = DanhSachMonAn.ListThucDon();
+                MessageBox.Show("Hãy chọn món ăn để xóa?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                danhSachThucDon.DataSource = DanhSachMonAn.ListThucDon();
             }
+            else
+            {
+                int monAn = int.Parse(danhSachThucDon.CurrentRow.Cells[0].Value.ToString());
+                DialogResult xacNhan = MessageBox.Show("Có muốn xóa món ăn không?", "Xác nhận xóa món ăn", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(xacNhan == DialogResult.Yes)
+                {
+                DanhSachMonAn.DeleteThucDon(monAn);
+                MessageBox.Show("Xóa thành công","Thông Báo",MessageBoxButtons.OK);
+                danhSachThucDon.DataSource = DanhSachMonAn.ListThucDon();
+            }
+            }
+            
         }
         private void btnTimThucDon_Click(object sender, EventArgs e)
         {
@@ -86,18 +107,38 @@ namespace QLTC
         }
         private void btnSuaDichVu_Click(object sender, EventArgs e)
         {
-            SuaDichVu suaDichVu = new SuaDichVu();
-            suaDichVu.ShowDialog();
+            if (danhSachDichVu.CurrentRow == null)
+            {
+                MessageBox.Show("Hãy chọn dịch vụ để sửa?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                danhSachDichVu.DataSource = DanhSachDichVu.ListDichVu();
+            }
+            else
+            {
+                string ma = danhSachDichVu.CurrentRow.Cells[0].Value.ToString();
+                string ten = danhSachDichVu.CurrentRow.Cells[1].Value.ToString();
+                string donGia = danhSachDichVu.CurrentRow.Cells[2].Value.ToString();
+                SuaDichVu suaDichVu = new SuaDichVu(ma, ten, donGia);
+                suaDichVu.ShowDialog();
+                danhSachDichVu.DataSource = DanhSachDichVu.ListDichVu();
+            }
         }
         private void btnXoaDichVu_Click(object sender, EventArgs e)
         {
-            int dichVu = int.Parse(danhSachDichVu.CurrentRow.Cells[0].Value.ToString());
-            DialogResult xacNhan = MessageBox.Show("Có muốn xóa dịch vụ không?", "Xác nhận xóa dịch vụ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (xacNhan == DialogResult.Yes)
+            if (danhSachDichVu.CurrentRow == null)
             {
-                DanhSachDichVu.DeleteDichVu(dichVu);
-                MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK);
+                MessageBox.Show("Hãy chọn dịch vụ để xóa?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 danhSachDichVu.DataSource = DanhSachDichVu.ListDichVu();
+            }
+            else
+            {
+                int dichVu = int.Parse(danhSachDichVu.CurrentRow.Cells[0].Value.ToString());
+                DialogResult xacNhan = MessageBox.Show("Có muốn xóa dịch vụ không?", "Xác nhận xóa dịch vụ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (xacNhan == DialogResult.Yes)
+                {
+                    DanhSachDichVu.DeleteDichVu(dichVu);
+                    MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK);
+                    danhSachDichVu.DataSource = DanhSachDichVu.ListDichVu();
+                }
             }
         }
         private void btnTimDichVu_Click(object sender, EventArgs e)
@@ -126,13 +167,21 @@ namespace QLTC
         }
         private void btnXoaSanh_Click(object sender, EventArgs e)
         {
-            int sanh = int.Parse(danhSachSanh.CurrentRow.Cells[0].Value.ToString());
-            DialogResult xacNhan = MessageBox.Show("Có muốn xóa sảnh không?", "Xác nhận xóa sảnh", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (xacNhan == DialogResult.Yes)
+            if (danhSachSanh.CurrentRow == null)
             {
-                DanhSachSanh.DeleteSanh(sanh);
-                MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK);
+                MessageBox.Show("Hãy chọn sảnh để xóa?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 danhSachSanh.DataSource = DanhSachSanh.ListSanh();
+            }
+            else
+            {
+                int sanh = int.Parse(danhSachSanh.CurrentRow.Cells[0].Value.ToString());
+                DialogResult xacNhan = MessageBox.Show("Có muốn xóa sảnh không?", "Xác nhận xóa sảnh", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (xacNhan == DialogResult.Yes)
+                {
+                    DanhSachSanh.DeleteSanh(sanh);
+                    MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK);
+                    danhSachSanh.DataSource = DanhSachSanh.ListSanh();
+                }
             }
         }
 

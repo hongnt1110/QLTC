@@ -26,10 +26,21 @@ namespace QLTC.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LUAN-LENOVO\\LUANNGUYEN;Initial Catalog=QLTC;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-8RKPG08\\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=T" +
+            "rue;")]
         public string QLTCConnectionString {
             get {
                 return ((string)(this["QLTCConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LUAN-LENOVO\\LUANNGUYEN;Initial Catalog=QLTC;Integrated Security=True")]
+        public string QLTCConnectionString1 {
+            get {
+                return ((string)(this["QLTCConnectionString1"]));
             }
         }
     }

@@ -11,34 +11,33 @@ using System.Windows.Forms;
 
 namespace QLTC
 {
-    public partial class SuaDichVu : Form
+    public partial class SuaLoaiSanh : Form
     {
         private string _ma;
         private string _ten;
         private string _donGia;
-        public SuaDichVu()
+        public SuaLoaiSanh()
         {
             InitializeComponent();
         }
-        public SuaDichVu(string ma, string ten, string gia) : this()
+        DataDichVuTableAdapters.LOAISANHTableAdapter DanhSachLSanh = new DataDichVuTableAdapters.LOAISANHTableAdapter();
+        public SuaLoaiSanh(string ma, string ten, string gia): this()
         {
             _ma = ma;
             _ten = ten;
             _donGia = gia;
-            maDichVu.Text = _ma;
-            tenDichVu.Text = _ten;
-            donGiaDichVu.Text = _donGia;
-            maDichVu.Enabled = false;
+            maLoaiSanh.Text = _ma;
+            tenLoaiSanh.Text = _ten;
+            donGiaLoaiSanh.Text = _donGia;
+            maLoaiSanh.Enabled = false;
         }
-        DataDichVuTableAdapters.DICHVUTableAdapter DanhSachDichVu = new DataDichVuTableAdapters.DICHVUTableAdapter();
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            DialogResult xacNhan = MessageBox.Show("Có muốn lưu thay đổi dịch vụ không?", "Xác nhận lưu loại sảnh", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult xacNhan = MessageBox.Show("Có muốn lưu thay đổi loại sảnh không?", "Xác nhận lưu loại sảnh", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (xacNhan == DialogResult.Yes)
             {
-                int gia = (int)Math.Round(float.Parse(donGiaDichVu.Text, CultureInfo.InvariantCulture.NumberFormat));
-                DanhSachDichVu.UpdateDichVu(tenDichVu.Text, gia, int.Parse(maDichVu.Text));
+                int gia = (int)Math.Round(float.Parse(donGiaLoaiSanh.Text, CultureInfo.InvariantCulture.NumberFormat));
+                DanhSachLSanh.UpdateLoaiSanh(tenLoaiSanh.Text, gia, int.Parse(maLoaiSanh.Text));
                 MessageBox.Show("Lưu thành công", "Thông Báo", MessageBoxButtons.OK);
                 this.Hide();
             }
