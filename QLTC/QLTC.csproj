@@ -91,6 +91,12 @@
       <DependentUpon>BaoCaoDoanhThu.cs</DependentUpon>
     </Compile>
     <Compile Include="Conection.cs" />
+    <Compile Include="DanhSachCa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhSachCa.Designer.cs">
+      <DependentUpon>DanhSachCa.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhSachLoaiSanh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,12 @@
     <Compile Include="QuenMatkhau.Designer.cs">
       <DependentUpon>QuenMatkhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuaCa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaCa.Designer.cs">
+      <DependentUpon>SuaCa.cs</DependentUpon>
+    </Compile>
     <Compile Include="SuaDichVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +195,12 @@
     </Compile>
     <Compile Include="TaiKhoan.cs" />
     <Compile Include="Temporary Class\ThucDon.cs" />
+    <Compile Include="ThemCa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemCa.Designer.cs">
+      <DependentUpon>ThemCa.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemDichVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCaoDoanhThu.resx">
       <DependentUpon>BaoCaoDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhSachCa.resx">
+      <DependentUpon>DanhSachCa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhSachLoaiSanh.resx">
       <DependentUpon>DanhSachLoaiSanh.cs</DependentUpon>
@@ -256,6 +277,9 @@
     <EmbeddedResource Include="QuenMatkhau.resx">
       <DependentUpon>QuenMatkhau.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SuaCa.resx">
+      <DependentUpon>SuaCa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SuaDichVu.resx">
       <DependentUpon>SuaDichVu.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SuaThucDon.resx">
       <DependentUpon>SuaThucDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemCa.resx">
+      <DependentUpon>ThemCa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemDichVu.resx">
       <DependentUpon>ThemDichVu.cs</DependentUpon>

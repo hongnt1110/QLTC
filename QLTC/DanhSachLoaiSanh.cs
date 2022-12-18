@@ -26,7 +26,7 @@ namespace QLTC
         {
             if (timLoaiSanh.Text == "Tìm kiếm theo tên loại sảnh")
             {
-                MessageBox.Show("Vui lòng nhập tên sảnh để tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng nhập tên loại sảnh để tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

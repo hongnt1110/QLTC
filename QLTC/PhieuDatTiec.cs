@@ -19,10 +19,10 @@ namespace QLTC
             InitializeComponent();
             txbChuRe.Text = "";
             txbCoDau.Text = "";
-            txbMaCa.Text = "";
+            cbbCa.Text = "";
             txbMaKhachHang.Text = "";
             txbMaPhieu.Text = "";
-            txbSanh.Text = "";
+            //txbSanh.Text = "";
             txbSLBan.Text = "";
             txbTienCoc.Text = "";
         }
@@ -30,7 +30,11 @@ namespace QLTC
         
         private void PhieuDatTiec_Load(object sender, EventArgs e)
         {
-            dgvPhieuDacTiec.DataSource = GetPartyBookingFormList();
+            // TODO: This line of code loads data into the 'dataDichVu.CA' table. You can move, or remove it, as needed.
+            this.cATableAdapter.Fill(this.dataDichVu.CA);
+            // TODO: This line of code loads data into the 'dataDichVu.SANH' table. You can move, or remove it, as needed.
+            this.sANHTableAdapter.Fill(this.dataDichVu.SANH);
+            //dgvPhieuDacTiec.DataSource = GetPartyBookingFormList();
         }
 
         private DataTable GetPartyBookingFormList()
@@ -53,10 +57,10 @@ namespace QLTC
         {
             txbChuRe.Text = string.Empty;
             txbCoDau.Text = string.Empty;
-            txbMaCa.Text = string.Empty;
+            cbbCa.Text = string.Empty;
             txbMaKhachHang.Text = string.Empty;
             txbMaPhieu.Text = string.Empty;
-            txbSanh.Text = string.Empty;
+            //txbSanh.Text = string.Empty;
             txbSLBan.Text = string.Empty;
             txbTienCoc.Text = string.Empty;
         }
@@ -65,18 +69,23 @@ namespace QLTC
         {
             if (e.RowIndex >=0)
             {
-                txbMaPhieu.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[0].Value.ToString();
-                txbMaKhachHang.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[1].Value.ToString();
-                txbNgayDaiTiec.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[2].Value.ToString();
-                txbChuRe.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[3].Value.ToString();
-                txbCoDau.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[4].Value.ToString();
-                cbbSanh.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[5].Value.ToString();
-                txbTienCoc.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[6].Value.ToString();
-                txbSLBan.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[7].Value.ToString();
-                txbMaCa.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[8].Value.ToString();
-            }    
+                //txbMaPhieu.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[0].Value.ToString();
+                //txbMaKhachHang.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[1].Value.ToString();
+                //txbNgayDaiTiec.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[2].Value.ToString();
+                //txbChuRe.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[3].Value.ToString();
+                //txbCoDau.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[4].Value.ToString();
+                //cbbSanh.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[5].Value.ToString();
+                //txbTienCoc.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[6].Value.ToString();
+                //txbSLBan.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[7].Value.ToString();
+                //txbMaCa.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[8].Value.ToString();
+            }
         }
 
-     
+        private void btnDanhSachCa_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DanhSachCa ca = new DanhSachCa();
+            ca.ShowDialog();
+        }
     }
 }
