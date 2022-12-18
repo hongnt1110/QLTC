@@ -80,8 +80,8 @@ namespace QLTC
                 }
 
             }
-            dgvInCTDV.DataSource = billList;
-            dgvInCTDV.Enabled = false;
+            dgvCTDV.DataSource = billList;
+            dgvCTDV.Enabled = false;
         }
 
         private void IndicateFoodDetail()
@@ -99,8 +99,8 @@ namespace QLTC
                 }
 
             }
-            dgvInCTMA.DataSource = billList;
-            dgvInCTMA.Enabled = false;
+            dgvCTMA.DataSource = billList;
+            dgvCTMA.Enabled = false;
 
         }
     }

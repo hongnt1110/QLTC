@@ -38,8 +38,8 @@ namespace QLTC
         {
             if (dgvDichVu.Rows.Count <=1 || dgvThucAn.Rows.Count <= 1 
                 ||txbChuRe.Text == string.Empty || txbCodau.Text == string.Empty
-                || txbGiaBan.Text == string.Empty || txbMaKhachHang.Text == string.Empty
-                || txbGiaBan.Text == string.Empty || txbSLBan.Text == string.Empty || txbTienCoc.Text == string.Empty)
+                || textBox1.Text == string.Empty || txbMaKhachHang.Text == string.Empty
+                || txbSLBan.Text == string.Empty || textBox2.Text == string.Empty)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin để đặt tiện");
             }    
