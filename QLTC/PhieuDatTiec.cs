@@ -17,8 +17,11 @@ namespace QLTC
         public PhieuDatTiec()
         {
             InitializeComponent();
+            btnInPhieu.Enabled= false;
             dgvThucAn.AutoGenerateColumns = false;
             dgvDichVu.AutoGenerateColumns=false;
+            dgvDichVu.AllowUserToAddRows = true;
+            dgvThucAn.AllowUserToAddRows = true;
             txbChuRe.Text = "";
             txbCodau.Text = "";
             cbbMaCa.Text = "";
@@ -52,15 +55,30 @@ namespace QLTC
                     DisableInforEdition(); // hiển thị thông tin cá nhân
                     IndicateFoodDetail(); // hiển thị chi tiết món ăn
                     IndicateServiceDetail(); // hiển thị chi tiết dịch vụ
+                    btnInPhieu.Enabled = true;
+                    
                     //Reset();
                 }               
                 
             }    
             
         }
-        private void btnLamMoi_Click(object sender, EventArgs e)
+
+
+
+        private void btnInPhieu_Click(object sender, EventArgs e)
         {
-            Reset();
+            InPhieuDatTiec inPhieu = new InPhieuDatTiec();
+            inPhieu.MaKH = txbMaKhachHang.Text;
+            inPhieu.MaPhieu = txbMaPhieu.Text;
+            inPhieu.CoDau = txbCodau.Text;
+            inPhieu.ChuRe = txbChuRe.Text;
+            inPhieu.Sanh = cbbSanh.Text;
+            inPhieu.SoBan = txbSLBan.Text;
+            inPhieu.GiaBan = txbGiaBan.Text;
+            inPhieu.NgayDat = dateTimePicker1.Text;
+            inPhieu.TienCoc = txbTienCoc.Text;
+            inPhieu.ShowDialog();
         }
         #endregion
 
@@ -154,7 +172,8 @@ namespace QLTC
 
             }
             dgvDichVu.DataSource = billList;
-            dgvDichVu.Enabled = false;
+            
+       
         }
 
         private void IndicateFoodDetail()
@@ -173,8 +192,7 @@ namespace QLTC
 
             }          
             dgvThucAn.DataSource = billList;
-            dgvThucAn.Enabled = false;
-
+           
         }
 
         private void DisableInforEdition()
@@ -188,15 +206,11 @@ namespace QLTC
              txbTienCoc.Enabled = false; 
              txbSLBan.Enabled = false; 
              cbbMaCa.Enabled = false;
-             txbGiaBan.Enabled = false; 
-       
-            
+             txbGiaBan.Enabled = false;       
         }
-        #endregion
 
-        #region In phiếu đặt tiệc
-        #endregion
-        #region Hàm thành phàn
+
+        
         private static string ChangeNameHallToHallID(string hallName)
         {
             switch (hallName)
@@ -216,45 +230,6 @@ namespace QLTC
                     return "0";
             }
             
-        }
-        private void Reset()
-        {
-            ClearTool();
-            SetEnable();
-            // clear dgvDichvu
-            var ddv = dgvDichVu.DataSource as DataTable;
-            ddv.Rows.Clear();
-            dgvDichVu.DataSource = ddv;
-
-            //clear dgcThucAn
-            var dma = dgvThucAn.DataSource as DataTable;
-            dma.Rows.Clear();
-            dgvDichVu.DataSource = dma;
-        }
-        private void ClearTool()
-        {
-            txbChuRe.Text = string.Empty;
-            txbCodau.Text = string.Empty;
-            cbbMaCa.Text = string.Empty;
-            txbMaKhachHang.Text = string.Empty;
-            txbGiaBan.Text = string.Empty;
-            cbbSanh.Text = string.Empty;
-            txbSLBan.Text = string.Empty;
-            txbTienCoc.Text = string.Empty;
-            txbMaPhieu.Text = string.Empty;
-        }
-        private void SetEnable()
-        {
-            txbChuRe.Enabled = true;
-            txbCodau.Enabled = true;
-            cbbMaCa.Enabled = true;
-            txbMaKhachHang.Enabled = true;
-            txbGiaBan.Enabled = true;
-            cbbSanh.Enabled = true;
-            dateTimePicker1.Enabled = true;
-            txbSLBan.Enabled = true;
-            txbTienCoc.Enabled = true;
-            txbMaPhieu.Enabled = true;
         }
         #endregion
 

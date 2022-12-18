@@ -68,9 +68,14 @@ namespace QLTC
 
         private void đặtTiệcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
             PhieuDatTiec pdt = new PhieuDatTiec();
             pdt.ShowDialog();
+        }
+
+        private void lậpHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HoaDon hoaDon = new HoaDon();
+            hoaDon.ShowDialog();
         }
     }
 }

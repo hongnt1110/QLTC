@@ -39,7 +39,6 @@ namespace QLTC
                     billList.Load(reader);
                     connection.Close();
                 }
-               
             }
             return billList;
         }
@@ -52,7 +51,7 @@ namespace QLTC
                 txbMaHoaDon.Text = dgvHD.SelectedRows[0].Cells[0].Value.ToString();
                 txbMaPhieu.Text = dgvHD.SelectedRows[0].Cells[0].Value.ToString();
                 txbTienCoc.Text = dgvHD.SelectedRows[0].Cells[1].Value.ToString();
-                txbNgayThanhToan.Text = dgvHD.SelectedRows[0].Cells[2].Value.ToString();
+                dtpNgayThanhToan.Text = dgvHD.SelectedRows[0].Cells[2].Value.ToString();
                 txbTongTien.Text = dgvHD.SelectedRows[0].Cells[3].Value.ToString();
                 txbTienCoc.Text = dgvHD.SelectedRows[0].Cells[4].Value.ToString();
                 txbTienPhaiTra.Text = dgvHD.SelectedRows[0].Cells[5].Value.ToString();
@@ -68,7 +67,7 @@ namespace QLTC
             string connectionString = ConfigurationManager.ConnectionStrings["QLTC.Properties.Settings.QLTCConnectionString"].ConnectionString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
-            string query = "update HOADON set NgayThanhToan = '"+ txbNgayThanhToan.Text +"' where MaHoaDon = '"+txbMaHoaDon.Text+"' ";
+            string query = "update HOADON set NgayThanhToan = '"+ dtpNgayThanhToan.Value + "' where MaHoaDon = '"+txbMaHoaDon.Text+"' ";
             SqlCommand command = new SqlCommand(query, connection);
             command.ExecuteNonQuery();
             connection.Close();
@@ -79,7 +78,14 @@ namespace QLTC
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            InHoaDon inHoaDon= new InHoaDon();         
+            InHoaDon inHoaDon= new InHoaDon();
+            inHoaDon.Enabled= true;
+            inHoaDon.MaHD = txbMaHoaDon.Text;
+            inHoaDon.MaPhieu = txbMaPhieu.Text;
+            inHoaDon.TongTien = txbTongTien.Text;
+            inHoaDon.DaDatCoc = txbTienCoc.Text;
+            inHoaDon.TongThu = txbTienPhaiTra.Text;
+            inHoaDon.NgayThanhToan = dtpNgayThanhToan.Text;
             inHoaDon.ShowDialog();
            
         }
