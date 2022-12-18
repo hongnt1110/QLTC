@@ -70,11 +70,13 @@ namespace QLTC
                 txbNgayDaiTiec.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[2].Value.ToString();
                 txbChuRe.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[3].Value.ToString();
                 txbCoDau.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[4].Value.ToString();
-                txbSanh.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[5].Value.ToString();
+                cbbSanh.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[5].Value.ToString();
                 txbTienCoc.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[6].Value.ToString();
                 txbSLBan.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[7].Value.ToString();
                 txbMaCa.Text = dgvPhieuDacTiec.SelectedRows[0].Cells[8].Value.ToString();
             }    
         }
+
+     
     }
 }
