@@ -2,9 +2,10 @@
 
 USE QLTC
 
-SELECT FORMAT (getdate(), 'dd/MM/yyyy ') as date
-SET DATEFORMAT dmy;  
-GO  
+set dateformat dmy;
+SELECT FORMAT (getdate(), 'dd-MM-yyyy') as date
+GO
+
 CREATE TABLE TAIKHOAN(
 	TenTaiKhoan varchar(50) not null,
 	MatKhau varchar(50) not null,
@@ -65,22 +66,24 @@ CREATE TABLE PHIEUDATTIEC(
 	GiaBan money not null
 	CONSTRAINT PK_PHIEUDT PRIMARY KEY (MaPhieuDT),
 	CONSTRAINT FK_PHIEU_KH FOREIGN KEY (MaKH) REFERENCES KHACHHANG(MaKH),
-	CONSTRAINT FK_PHIEU_CA FOREIGN KEY (MaCa) REFERENCES CA(MaCa)
+	CONSTRAINT FK_PHIEU_CA FOREIGN KEY (MaCa) REFERENCES CA(MaCa),
+	CONSTRAINT FK_PHIEU_SANH FOREIGN KEY (MaSanh) REFERENCES SANH(MaSanh)
 )
+
 CREATE TABLE CT_DICHVU(
 	MaCT_DichVu	int identity(1,1) not null,
-	MaDichVu	int not null,
+	MaDichVu	int,
+	SoLuong int,
 	MaPhieuDT	int not null,
-	DonGia	money not null,
 	CONSTRAINT PK_CTDV PRIMARY KEY (MaCT_DichVu),
 	CONSTRAINT FK_CTDV_DV FOREIGN KEY (MaDichVu) REFERENCES DICHVU(MaDichVu),
 	CONSTRAINT FK_CTDV_PHIEU FOREIGN KEY (MaPhieuDT) REFERENCES PHIEUDATTIEC(MaPhieuDT)
 )
 CREATE TABLE CT_MONAN(
 	MaCT_MonAn	int identity(1,1) not null,
-	MaMonAn int not null,
+	MaMonAn int,
 	MaPhieuDT	int not null,	
-	DonGia money not null,
+
 	CONSTRAINT PK_CTMA PRIMARY KEY (MaCT_MonAn),
 	CONSTRAINT FK_CTMA_MA FOREIGN KEY (MaMonAn) REFERENCES MONAN(MaMonAn),
 	CONSTRAINT FK_CTMA_PHIEU FOREIGN KEY (MaPhieuDT) REFERENCES PHIEUDATTIEC(MaPhieuDT)
@@ -127,7 +130,6 @@ insert into KHACHHANG values (N'Hải', N'Thanh Hóa', '0123213423')
 select*from KHACHHANG
 
 /*thêm ca*/
-insert into CA values ('Sáng', '9H00 - 12H00')
 insert into CA values ('Trưa', '12H00 - 15H00')
 insert into CA values (N'Tối', '18H00 - 21H00')
 select *from CA
@@ -144,35 +146,84 @@ insert into SANH values ('Rose',1,100, 1000000, N'Trống')
 insert into SANH values ('Tulip',2,120, 1100000, N'Trống')
 insert into SANH values ('Purple',3,150, 1200000, N'Trống')
 insert into SANH values ('Pink',4,100, 1400000, N'Trống')
-insert into SANH values ('Purple',5,150, 1200000, N'Trống')
+insert into SANH values ('Red',5,150, 1200000, N'Trống')
 select *from SANH
 
+/*Thêm món ăn*/
+insert into MONAN values (N'Mì cay', 50000)
+insert into MONAN values (N'Lẩu hải sản', 1000000)
+insert into MONAN values (N'Lẩu chua cay', 1000000)
+insert into MONAN values (N'Gà nướng', 1200000)
+insert into MONAN values (N'Gà luộc', 1000000)
+insert into MONAN values (N'Cua luộc', 1000000)
+insert into MONAN values (N'Cua nướng', 1000000)
+
+/*Thêm dịch vụ*/
+insert into DICHVU values (N'Màn hoa tươi', 2000000)
+insert into DICHVU values (N'Cổng hoa tươi', 5000000)
+insert into DICHVU values (N'Backdrop và Background đặc biệt', 10000000)
+insert into DICHVU values (N'Tranh cát', 1200000)
+insert into DICHVU values (N'Bàn lễ tân đặc biệt', 10000000)
+insert into DICHVU values (N'Quà đáp lễ', 5000000)
+insert into DICHVU values (N'Thiệp cưới', 8000000)
+insert into DICHVU values (N'Truyền hình trực tiếp', 20000000)
 /*thêm phiếu đặt tiệc*/
-insert into PHIEUDATTIEC values (1, '16/12/2022', 'Nam', N'Nữ',1,10000000,70,1,1350000)
-insert into PHIEUDATTIEC values (3, '16/12/2022', N'Hải', N'Li',2,11000000,100,3,1500000)
+insert into PHIEUDATTIEC values (2,'18/02/2002','4','4',2,45,23,3,3544)
 select *from PHIEUDATTIEC
-select *from HOADON
+
 
 /*Trigger tự động thêm hóa đơn mỗi khi thêm phiếu đặt tiệc*/
+
+
+
+/*Trigger tự động thêm chi tiết dịch vụ mỗi khi thêm phiếu đặt tiệc*/
+/*create trigger CTDV_PHIEUDATTIEC_INSERT
+on PHIEUDATTIEC
+for insert
+as
+begin
+	--Xác định biến
+	declare @MaPhieuDatTiec int
+	--Gán giá trị cho biến
+	select @MaPhieuDatTiec = MaPhieuDT from inserted
+	insert into CT_DICHVU (MaPhieuDT,MaDichVu) values (@MaPhieuDatTiec, null)
+	print ('Da tu dong them vao CTDV')
+end*/
+
+
+/*Trigger tự động thêm chi tiết món ăn mỗi khi thêm phiếu đặt tiệc*/
+/*create trigger CTMA_PHIEUDATTIEC_INSERTCTMA
+on PHIEUDATTIEC
+for insert
+as
+begin
+	--Xác định biến
+	declare @MaPhieuDatTiec int
+	--Gán giá trị cho biến
+	select @MaPhieuDatTiec = MaPhieuDT from inserted
+	insert into CT_MONAN (MaPhieuDT,MaMonAn) values (@MaPhieuDatTiec, null)
+	print ('Da tu dong them vao CTMA')
+end*/
+
+
 create trigger HD_PHIEUDATTIEC_INSERTHD
 on PHIEUDATTIEC
 for insert
 as
 begin
 	--Xác định biến
-	declare @MaPhieuDatTiec int, @TongTienHoaDon money, @TienConLai money
+	declare @MaPhieuDatTiec int,@TongTienHoaDon money, @TienConLai money
 	--Gán giá trị cho biến
-	select @MaPhieuDatTiec = MaPhieuDT from inserted
-	
-	select @TongTienHoaDon = inserted.GiaBan*inserted.SoLuongBan + LOAISANH.DonGia from inserted, SANH, LOAISANH where inserted.MaSanh = SANH.MaSanh 
-	and SANH.MaLoaiSanh = LOAISANH.MaLoaiSanh
+	select @TongTienHoaDon = inserted.GiaBan*inserted.SoLuongBan + LOAISANH.DonGia from inserted, SANH, LOAISANH,DICHVU,CT_DICHVU,MONAN,CT_MONAN where inserted.MaSanh = SANH.MaSanh 
+	and SANH.MaLoaiSanh = LOAISANH.MaLoaiSanh 
+
 	select @TienConLai = @TongTienHoaDon - inserted.TienCoc from inserted
 	insert into HOADON values (null, @TongTienHoaDon,@TienConLai,@MaPhieuDatTiec)
 	print ('Da tu dong them hoa don')
-end 
+end
 
-select HOADON.MaHoaDon, HOADON.MaPhieuDT,HOADON.NgayThanhToan, HOADON.TienConLai,HOADON.TongTienHD,PHIEUDATTIEC.TienCoc
-from PHIEUDATTIEC, HOADON
-where PHIEUDATTIEC.MaPhieuDT = HOADON.MaPhieuDT
-
+select * from HOADON
+select *from CT_DICHVU
+select *from HOADON
+select *from DICHVU
 
