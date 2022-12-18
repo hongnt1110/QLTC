@@ -23,11 +23,13 @@ namespace QLTC
             dgvDichVu.AllowUserToAddRows = true;
             dgvThucAn.AllowUserToAddRows = true;
             txbChuRe.Text = "";
+
             txbCodau.Text = "";
             cbbMaCa.Text = "";
             txbMaKhachHang.Text = "";
             txbGiaBan.Text = "";
             cbbSanh.Text = "";
+
             txbSLBan.Text = "";
             txbTienCoc.Text = "";
         }
@@ -134,6 +136,7 @@ namespace QLTC
 
         private void AddingIntoCT_DichVu()
         {
+
             string connectionString = ConfigurationManager.ConnectionStrings["QLTC.Properties.Settings.QLTCConnectionString"].ConnectionString;
             SqlConnection connection = new SqlConnection(connectionString);
             string query = null;
@@ -151,6 +154,8 @@ namespace QLTC
                     connection.Close();
                 }
             }
+
+
         }
         #endregion
 
@@ -178,6 +183,7 @@ namespace QLTC
 
         private void IndicateFoodDetail()
         {
+
             DataTable billList = new DataTable();
             string connectionString = ConfigurationManager.ConnectionStrings["QLTC.Properties.Settings.QLTCConnectionString"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -207,6 +213,7 @@ namespace QLTC
              txbSLBan.Enabled = false; 
              cbbMaCa.Enabled = false;
              txbGiaBan.Enabled = false;       
+
         }
 
 
@@ -215,6 +222,7 @@ namespace QLTC
         {
             switch (hallName)
             {
+
                 case "Rose":
                     return "1";
                 case "Tulip":
@@ -230,9 +238,19 @@ namespace QLTC
                     return "0";
             }
             
+
         }
         #endregion
 
+
+
+
+        private void btnDanhSachCa_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DanhSachCa ca = new DanhSachCa();
+            ca.ShowDialog();
+        }
 
     }
 }
