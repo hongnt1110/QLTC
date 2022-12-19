@@ -32,6 +32,8 @@ namespace QLTC
 
             txbSLBan.Text = "";
             txbTienCoc.Text = "";
+            checkedListBox1.Items.Add(danhSachMonAn.CheckListThucDon(2).ToString());
+
         }
         #region Sự kiện các button
         private void btnLuu_Click(object sender, EventArgs e) // lưu thông tin xuống db
@@ -94,14 +96,14 @@ namespace QLTC
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             // thêm phiết đặt tiệc
-            string query = "insert into PHIEUDATTIEC values (" + txbMaKhachHang.Text + ",'" + dateTimePicker1.Value + "', N'" + txbChuRe.Text + "',N'" + txbCodau.Text + "', " + ChangeNameHallToHallID(cbbSanh.Text) + ", " + txbTienCoc.Text + ", "+txbSLBan.Text+","+cbbMaCa.Text+","+txbGiaBan.Text+")";
+            string query = "insert into PHIEUDATTIEC values (" + txbMaKhachHang.Text + ",'" + dateTimePicker1.Value + "', N'" + txbChuRe.Text + "',N'" + txbCodau.Text + "', " + cbbSanh.SelectedValue.ToString()/* ChangeNameHallToHallID(cbbSanh.Text)*/ + ", " + txbTienCoc.Text + ", "+txbSLBan.Text+","+ cbbMaCa.SelectedValue.ToString() + ","+txbGiaBan.Text+")";
             SqlCommand command = new SqlCommand(query, connection);
             command.ExecuteNonQuery();
             connection.Close();
 
             // hiện mã phiếu
             connection.Open();
-            string queryShow = "select MaPhieuDT from PHIEUDATTIEC where MaKH = '" + txbMaKhachHang.Text + "' and NgayDaiTiec = '" + dateTimePicker1.Value + "' and TenChuRe = '" + txbChuRe.Text + "' and TenCoDau = '" + txbCodau.Text + "' and MaSanh = '" + ChangeNameHallToHallID(cbbSanh.Text) + "' and TienCoc = " + txbTienCoc.Text + " and SoLuongBan = '" + txbSLBan.Text + "' and MaCa = '" + cbbMaCa.Text + "' and GiaBan = '" + txbGiaBan.Text + "'";
+            string queryShow = "select MaPhieuDT from PHIEUDATTIEC where MaKH = '" + txbMaKhachHang.Text + "' and NgayDaiTiec = '" + dateTimePicker1.Value + "' and TenChuRe = '" + txbChuRe.Text + "' and TenCoDau = '" + txbCodau.Text + "' and MaSanh = '" + cbbSanh.SelectedValue.ToString() /*ChangeNameHallToHallID(cbbSanh.Text)*/ + "' and TienCoc = " + txbTienCoc.Text + " and SoLuongBan = '" + txbSLBan.Text + "' and MaCa = '" + cbbMaCa.SelectedValue.ToString() + "' and GiaBan = '" + txbGiaBan.Text + "'";
             SqlCommand commandShow = new SqlCommand(queryShow, connection);
             SqlDataReader dr = commandShow.ExecuteReader();
             while (dr.Read())
@@ -217,29 +219,27 @@ namespace QLTC
         }
 
 
-        
-        private static string ChangeNameHallToHallID(string hallName)
-        {
-            switch (hallName)
-            {
 
-                case "Rose":
-                    return "1";
-                case "Tulip":
-                    return "2";
-                case "Purple":
-                    return "3";
-                case "Pink":
-                    return "4";
-                case "Red":
-                    return "5";
-                default:
-                    MessageBox.Show("Khong hop le");
-                    return "0";
-            }
-            
+        //private static string ChangeNameHallToHallID(string hallName)
+        //{
+        //    switch (hallName)
+        //    {
 
-        }
+        //        case "Rose":
+        //            return "1";
+        //        case "Tulip":
+        //            return "2";
+        //        case "Purple":
+        //            return "3";
+        //        case "Pink":
+        //            return "4";
+        //        case "Red":
+        //            return "5";
+        //        default:
+        //            MessageBox.Show("Khong hop le");
+        //            return "0";
+        //    }
+        //}
         #endregion
 
 
@@ -250,6 +250,41 @@ namespace QLTC
             this.Hide();
             DanhSachCa ca = new DanhSachCa();
             ca.ShowDialog();
+        }
+
+        private void cbbSanh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PhieuDatTiec_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dataDichVu.DICHVU' table. You can move, or remove it, as needed.
+            this.dICHVUTableAdapter.Fill(this.dataDichVu.DICHVU);
+            // TODO: This line of code loads data into the 'dataDichVu.MONAN' table. You can move, or remove it, as needed.
+            this.mONANTableAdapter.Fill(this.dataDichVu.MONAN);
+            // TODO: This line of code loads data into the 'dataDichVu.CA' table. You can move, or remove it, as needed.
+            this.cATableAdapter.Fill(this.dataDichVu.CA);
+            // TODO: This line of code loads data into the 'dataDichVu.SANH' table. You can move, or remove it, as needed.
+            this.sANHTableAdapter.Fill(this.dataDichVu.SANH);
+
+        }
+
+        private void listToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.mONANTableAdapter.List(this.dataDichVu.MONAN);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+        DataDichVuTableAdapters.MONANTableAdapter danhSachMonAn = new DataDichVuTableAdapters.MONANTableAdapter();
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -130,6 +130,12 @@
     <Compile Include="InHoaDon.Designer.cs">
       <DependentUpon>InHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="InPhieuDatTiec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InPhieuDatTiec.Designer.cs">
+      <DependentUpon>InPhieuDatTiec.cs</DependentUpon>
+    </Compile>
     <Compile Include="LapBaoCao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +231,12 @@
     <Compile Include="ThemThucDon.designer.cs">
       <DependentUpon>ThemThucDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="TraCuuHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TraCuuHoaDon.Designer.cs">
+      <DependentUpon>TraCuuHoaDon.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminChildForm\DichVuKhacForm.resx">
       <DependentUpon>DichVuKhacForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InHoaDon.resx">
       <DependentUpon>InHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InPhieuDatTiec.resx">
+      <DependentUpon>InPhieuDatTiec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LapBaoCao.resx">
       <DependentUpon>LapBaoCao.cs</DependentUpon>
@@ -306,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThemThucDon.resx">
       <DependentUpon>ThemThucDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraCuuHoaDon.resx">
+      <DependentUpon>TraCuuHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataDichVu.xsc">
       <DependentUpon>DataDichVu.xsd</DependentUpon>

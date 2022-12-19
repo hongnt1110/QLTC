@@ -131,6 +131,7 @@ namespace QLTC
             this.maMonAn.Name = "maMonAn";
             this.maMonAn.Size = new System.Drawing.Size(192, 26);
             this.maMonAn.TabIndex = 10;
+            this.maMonAn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
