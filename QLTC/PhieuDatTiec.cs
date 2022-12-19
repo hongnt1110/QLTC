@@ -251,6 +251,5 @@ namespace QLTC
             DanhSachCa ca = new DanhSachCa();
             ca.ShowDialog();
         }
-
     }
 }

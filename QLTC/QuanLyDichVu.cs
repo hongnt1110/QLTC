@@ -53,7 +53,7 @@ namespace QLTC
         {
             if (danhSachThucDon.CurrentRow == null)
             {
-                MessageBox.Show("Hãy chọn dịch vụ để sửa?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Hãy chọn món ăn để sửa?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 danhSachThucDon.DataSource = DanhSachMonAn.ListThucDon();
             }
             else
