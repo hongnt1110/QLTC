@@ -11042,40 +11042,45 @@ SELECT MaLoaiSanh, LoaiSanh, DonGia FROM LOAISANH WHERE (MaLoaiSanh = @MaLoaiSan
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT MaMonAn, TenMonAn, DonGia FROM dbo.MONAN";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM MONAN\r\nWHERE        (MaMonAn = @MaMonAn)";
+            this._commandCollection[1].CommandText = "SELECT TenMonAn FROM dbo.MONAN WHERE MaMonAn = @MaMonAn";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaMonAn", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MaMonAn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaMonAn", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MaMonAn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[MONAN] ([TenMonAn], [DonGia]) VALUES (@TenMonAn, @DonGia);\r\nSE" +
-                "LECT MaMonAn, TenMonAn, DonGia FROM MONAN WHERE (MaMonAn = SCOPE_IDENTITY())";
+            this._commandCollection[2].CommandText = "DELETE FROM MONAN\r\nWHERE        (MaMonAn = @MaMonAn)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TenMonAn", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "TenMonAn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DonGia", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DonGia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaMonAn", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MaMonAn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT * FROM dbo.MONAN";
+            this._commandCollection[3].CommandText = "INSERT INTO [dbo].[MONAN] ([TenMonAn], [DonGia]) VALUES (@TenMonAn, @DonGia);\r\nSE" +
+                "LECT MaMonAn, TenMonAn, DonGia FROM MONAN WHERE (MaMonAn = SCOPE_IDENTITY())";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TenMonAn", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "TenMonAn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DonGia", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DonGia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT MaMonAn, TenMonAn, DonGia FROM dbo.MONAN WHERE TenMonAn LIKE @TenMonAn";
+            this._commandCollection[4].CommandText = "SELECT * FROM dbo.MONAN";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TenMonAn", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "TenMonAn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "UPDATE       MONAN\r\nSET                TenMonAn = @TenMonAn, DonGia = @DonGia\r\nWH" +
-                "ERE        (MaMonAn = @Original_MaMonAn)";
+            this._commandCollection[5].CommandText = "SELECT MaMonAn, TenMonAn, DonGia FROM dbo.MONAN WHERE TenMonAn LIKE @TenMonAn";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TenMonAn", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "TenMonAn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DonGia", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DonGia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MaMonAn", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MaMonAn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "UPDATE       MONAN\r\nSET                TenMonAn = @TenMonAn, DonGia = @DonGia\r\nWH" +
+                "ERE        (MaMonAn = @Original_MaMonAn)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TenMonAn", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "TenMonAn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DonGia", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DonGia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MaMonAn", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MaMonAn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11106,8 +11111,34 @@ SELECT MaLoaiSanh, LoaiSanh, DonGia FROM LOAISANH WHERE (MaLoaiSanh = @MaLoaiSan
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int CheckList(DataDichVu.MONANDataTable dataTable, int MaMonAn) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MaMonAn));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataDichVu.MONANDataTable CheckListThucDon(int MaMonAn) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MaMonAn));
+            DataDichVu.MONANDataTable dataTable = new DataDichVu.MONANDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int List(DataDichVu.MONANDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -11120,7 +11151,7 @@ SELECT MaLoaiSanh, LoaiSanh, DonGia FROM LOAISANH WHERE (MaLoaiSanh = @MaLoaiSan
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DataDichVu.MONANDataTable ListThucDon() {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             DataDichVu.MONANDataTable dataTable = new DataDichVu.MONANDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -11131,7 +11162,7 @@ SELECT MaLoaiSanh, LoaiSanh, DonGia FROM LOAISANH WHERE (MaLoaiSanh = @MaLoaiSan
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int Search(DataDichVu.MONANDataTable dataTable, string TenMonAn) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((TenMonAn == null)) {
                 throw new global::System.ArgumentNullException("TenMonAn");
             }
@@ -11150,7 +11181,7 @@ SELECT MaLoaiSanh, LoaiSanh, DonGia FROM LOAISANH WHERE (MaLoaiSanh = @MaLoaiSan
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DataDichVu.MONANDataTable SearchThucDon(string TenMonAn) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((TenMonAn == null)) {
                 throw new global::System.ArgumentNullException("TenMonAn");
             }
@@ -11298,7 +11329,7 @@ SELECT MaLoaiSanh, LoaiSanh, DonGia FROM LOAISANH WHERE (MaLoaiSanh = @MaLoaiSan
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
         public virtual int DeleteThucDon(int MaMonAn) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             command.Parameters[0].Value = ((int)(MaMonAn));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -11322,7 +11353,7 @@ SELECT MaLoaiSanh, LoaiSanh, DonGia FROM LOAISANH WHERE (MaLoaiSanh = @MaLoaiSan
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertThucDon(string TenMonAn, decimal DonGia) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((TenMonAn == null)) {
                 throw new global::System.ArgumentNullException("TenMonAn");
             }
@@ -11352,7 +11383,7 @@ SELECT MaLoaiSanh, LoaiSanh, DonGia FROM LOAISANH WHERE (MaLoaiSanh = @MaLoaiSan
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateThucDon(string TenMonAn, decimal DonGia, int Original_MaMonAn) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             if ((TenMonAn == null)) {
                 throw new global::System.ArgumentNullException("TenMonAn");
             }

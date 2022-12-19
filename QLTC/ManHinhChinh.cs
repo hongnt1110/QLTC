@@ -77,5 +77,27 @@ namespace QLTC
             HoaDon hoaDon = new HoaDon();
             hoaDon.ShowDialog();
         }
+
+        private void traCứuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void traCứuHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TraCuuHoaDon traCuuHD = new TraCuuHoaDon();
+            traCuuHD.ShowDialog();
+        }
+
+        private void traCứuTiệcCướiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TraCuuTiecCuoi traCuuTC = new TraCuuTiecCuoi();
+            traCuuTC.ShowDialog();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }
