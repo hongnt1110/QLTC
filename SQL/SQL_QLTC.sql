@@ -153,6 +153,33 @@ insert into PHIEUDATTIEC values (3, '16/12/2022', N'Hải', N'Li',2,11000000,100
 select *from PHIEUDATTIEC
 select *from HOADON
 
+insert into HOADON values ('16/12/2022',1000,500,1)
+insert into HOADON values ('16/12/2022',1111,555,2)
+insert into HOADON values ('17/12/2022',2000,500,1)
+insert into HOADON values ('16/11/2022',2000,500,1)
+insert into HOADON values ('16/11/2022',1511,555,2)
+insert into HOADON values ('17/11/2022',4600,500,1)
+insert into HOADON values ('16/10/2022',1000,500,1)
+insert into HOADON values ('16/10/2022',6111,555,2)
+insert into HOADON values ('17/10/2022',9000,500,1)
+
+insert into HOADON values ('18/12/2022',1000,500,1)
+insert into HOADON values ('14/12/2022',1111,555,2)
+insert into HOADON values ('11/12/2022',2000,500,1)
+insert into HOADON values ('9/12/2022',2000,500,1)
+insert into HOADON values ('1/12/2022',1511,555,2)
+insert into HOADON values ('17/12/2022',4600,500,1)
+insert into HOADON values ('16/12/2022',1000,500,1)
+insert into HOADON values ('19/12/2022',6111,555,2)
+insert into HOADON values ('31/12/2022',9000,500,1)
+insert into DOANHSO values ('18/12/2022',12,5000,
+
+insert into DOANHSO values ()
+SELECT COUNT(MaHoaDon) AS N'Số Lượng Tiệc' FROM HOADON
+SELECT SUM(TongTienHD) AS N'Tổng tiền hóa đơn' FROM HOADON
+SELECT DISTINCT NgayThanhToan,COUNT(NgayThanhToan) AS N'Số Lượng Tiệc', CAST( SUM(TongTienHD)AS INT) AS N'Doanh Thu'
+FROM HOADON
+GROUP BY NgayThanhToan
 /*Trigger tự động thêm hóa đơn mỗi khi thêm phiếu đặt tiệc*/
 create trigger HD_PHIEUDATTIEC_INSERTHD
 on PHIEUDATTIEC
