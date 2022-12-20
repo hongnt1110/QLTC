@@ -29,19 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.cbbMaCa = new System.Windows.Forms.ComboBox();
-            this.cABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataDichVuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataDichVu = new QLTC.DataDichVu();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -65,46 +57,40 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.dgvThucAn = new System.Windows.Forms.DataGridView();
-            this.maMonAnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenMonAnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donGiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mONANBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnInPhieu = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.dgvDichVu = new System.Windows.Forms.DataGridView();
+            this.dICHVUBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sANHTableAdapter = new QLTC.DataDichVuTableAdapters.SANHTableAdapter();
             this.cATableAdapter = new QLTC.DataDichVuTableAdapters.CATableAdapter();
             this.mONANBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mONANTableAdapter = new QLTC.DataDichVuTableAdapters.MONANTableAdapter();
-            this.dICHVUBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dICHVUTableAdapter = new QLTC.DataDichVuTableAdapters.DICHVUTableAdapter();
-            this.maDichVuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenDichVuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donGiaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataDichVu1 = new QLTC.DataDichVu();
+            this.listMonAn = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.listDichVu = new System.Windows.Forms.ListView();
+            this.tenDichVu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.donGiaDichVu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnCa = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataDichVuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataDichVu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sANHBindingSource)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThucAn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONANBindingSource1)).BeginInit();
-            this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mONANBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dICHVUBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mONANBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataDichVu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cABindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -184,11 +170,6 @@
             this.cbbMaCa.Size = new System.Drawing.Size(126, 21);
             this.cbbMaCa.TabIndex = 22;
             this.cbbMaCa.ValueMember = "MaCa";
-            // 
-            // cABindingSource
-            // 
-            this.cABindingSource.DataMember = "CA";
-            this.cABindingSource.DataSource = this.dataDichVuBindingSource;
             // 
             // dataDichVuBindingSource
             // 
@@ -414,158 +395,26 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Chú rể";
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.checkedListBox1);
-            this.panel5.Controls.Add(this.dgvThucAn);
-            this.panel5.Controls.Add(this.panel4);
-            this.panel5.Controls.Add(this.panel3);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 216);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(730, 182);
-            this.panel5.TabIndex = 4;
-            // 
-            // dgvThucAn
-            // 
-            this.dgvThucAn.AllowDrop = true;
-            this.dgvThucAn.AutoGenerateColumns = false;
-            this.dgvThucAn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvThucAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvThucAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThucAn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maMonAnDataGridViewTextBoxColumn,
-            this.tenMonAnDataGridViewTextBoxColumn,
-            this.donGiaDataGridViewTextBoxColumn});
-            this.dgvThucAn.DataSource = this.mONANBindingSource1;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvThucAn.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvThucAn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvThucAn.Location = new System.Drawing.Point(60, 0);
-            this.dgvThucAn.Name = "dgvThucAn";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvThucAn.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvThucAn.RowHeadersVisible = false;
-            this.dgvThucAn.RowHeadersWidth = 51;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvThucAn.RowsDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvThucAn.RowTemplate.Height = 24;
-            this.dgvThucAn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvThucAn.Size = new System.Drawing.Size(610, 182);
-            this.dgvThucAn.TabIndex = 2;
-            // 
-            // maMonAnDataGridViewTextBoxColumn
-            // 
-            this.maMonAnDataGridViewTextBoxColumn.DataPropertyName = "MaMonAn";
-            this.maMonAnDataGridViewTextBoxColumn.HeaderText = "MaMonAn";
-            this.maMonAnDataGridViewTextBoxColumn.Name = "maMonAnDataGridViewTextBoxColumn";
-            this.maMonAnDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tenMonAnDataGridViewTextBoxColumn
-            // 
-            this.tenMonAnDataGridViewTextBoxColumn.DataPropertyName = "TenMonAn";
-            this.tenMonAnDataGridViewTextBoxColumn.HeaderText = "TenMonAn";
-            this.tenMonAnDataGridViewTextBoxColumn.Name = "tenMonAnDataGridViewTextBoxColumn";
-            // 
-            // donGiaDataGridViewTextBoxColumn
-            // 
-            this.donGiaDataGridViewTextBoxColumn.DataPropertyName = "DonGia";
-            this.donGiaDataGridViewTextBoxColumn.HeaderText = "DonGia";
-            this.donGiaDataGridViewTextBoxColumn.Name = "donGiaDataGridViewTextBoxColumn";
-            // 
             // mONANBindingSource1
             // 
             this.mONANBindingSource1.DataMember = "MONAN";
             this.mONANBindingSource1.DataSource = this.dataDichVuBindingSource;
             // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(670, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(60, 182);
-            this.panel4.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(60, 182);
-            this.panel3.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel6.Location = new System.Drawing.Point(0, 398);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(60, 211);
-            this.panel6.TabIndex = 5;
-            // 
-            // panel7
-            // 
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(670, 398);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(60, 211);
-            this.panel7.TabIndex = 6;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.label11);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(60, 398);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(610, 32);
-            this.panel8.TabIndex = 7;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 3);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(131, 17);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Các dịch vụ khác";
-            // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.btnCa);
             this.panel9.Controls.Add(this.btnInPhieu);
             this.panel9.Controls.Add(this.btnLuu);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel9.Location = new System.Drawing.Point(60, 555);
+            this.panel9.Location = new System.Drawing.Point(0, 499);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(610, 54);
+            this.panel9.Size = new System.Drawing.Size(730, 54);
             this.panel9.TabIndex = 8;
             // 
             // btnInPhieu
             // 
             this.btnInPhieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInPhieu.Location = new System.Drawing.Point(524, 12);
+            this.btnInPhieu.Location = new System.Drawing.Point(638, 12);
             this.btnInPhieu.Name = "btnInPhieu";
             this.btnInPhieu.Size = new System.Drawing.Size(80, 30);
             this.btnInPhieu.TabIndex = 21;
@@ -576,7 +425,7 @@
             // btnLuu
             // 
             this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLuu.Location = new System.Drawing.Point(430, 12);
+            this.btnLuu.Location = new System.Drawing.Point(550, 12);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(80, 30);
             this.btnLuu.TabIndex = 20;
@@ -584,46 +433,10 @@
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // dgvDichVu
+            // dICHVUBindingSource
             // 
-            this.dgvDichVu.AutoGenerateColumns = false;
-            this.dgvDichVu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDichVu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDichVu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maDichVuDataGridViewTextBoxColumn,
-            this.tenDichVuDataGridViewTextBoxColumn,
-            this.donGiaDataGridViewTextBoxColumn1});
-            this.dgvDichVu.DataSource = this.dICHVUBindingSource;
-            this.dgvDichVu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDichVu.Location = new System.Drawing.Point(60, 430);
-            this.dgvDichVu.Name = "dgvDichVu";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDichVu.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            this.dgvDichVu.RowHeadersVisible = false;
-            this.dgvDichVu.RowHeadersWidth = 51;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvDichVu.RowsDefaultCellStyle = dataGridViewCellStyle14;
-            this.dgvDichVu.RowTemplate.Height = 24;
-            this.dgvDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvDichVu.Size = new System.Drawing.Size(610, 125);
-            this.dgvDichVu.TabIndex = 9;
+            this.dICHVUBindingSource.DataMember = "DICHVU";
+            this.dICHVUBindingSource.DataSource = this.dataDichVuBindingSource;
             // 
             // sANHTableAdapter
             // 
@@ -642,55 +455,120 @@
             // 
             this.mONANTableAdapter.ClearBeforeFill = true;
             // 
-            // dICHVUBindingSource
-            // 
-            this.dICHVUBindingSource.DataMember = "DICHVU";
-            this.dICHVUBindingSource.DataSource = this.dataDichVuBindingSource;
-            // 
             // dICHVUTableAdapter
             // 
             this.dICHVUTableAdapter.ClearBeforeFill = true;
             // 
-            // maDichVuDataGridViewTextBoxColumn
+            // dataDichVu1
             // 
-            this.maDichVuDataGridViewTextBoxColumn.DataPropertyName = "MaDichVu";
-            this.maDichVuDataGridViewTextBoxColumn.HeaderText = "MaDichVu";
-            this.maDichVuDataGridViewTextBoxColumn.Name = "maDichVuDataGridViewTextBoxColumn";
-            this.maDichVuDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataDichVu1.DataSetName = "DataDichVu";
+            this.dataDichVu1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tenDichVuDataGridViewTextBoxColumn
+            // listMonAn
             // 
-            this.tenDichVuDataGridViewTextBoxColumn.DataPropertyName = "TenDichVu";
-            this.tenDichVuDataGridViewTextBoxColumn.HeaderText = "TenDichVu";
-            this.tenDichVuDataGridViewTextBoxColumn.Name = "tenDichVuDataGridViewTextBoxColumn";
+            this.listMonAn.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.listMonAn.Alignment = System.Windows.Forms.ListViewAlignment.Default;
+            this.listMonAn.CheckBoxes = true;
+            this.listMonAn.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.listMonAn.GridLines = true;
+            this.listMonAn.HideSelection = false;
+            this.listMonAn.HoverSelection = true;
+            this.listMonAn.Location = new System.Drawing.Point(60, 238);
+            this.listMonAn.Name = "listMonAn";
+            this.listMonAn.Size = new System.Drawing.Size(610, 113);
+            this.listMonAn.TabIndex = 3;
+            this.listMonAn.UseCompatibleStateImageBehavior = false;
+            this.listMonAn.View = System.Windows.Forms.View.Details;
             // 
-            // donGiaDataGridViewTextBoxColumn1
+            // columnHeader1
             // 
-            this.donGiaDataGridViewTextBoxColumn1.DataPropertyName = "DonGia";
-            this.donGiaDataGridViewTextBoxColumn1.HeaderText = "DonGia";
-            this.donGiaDataGridViewTextBoxColumn1.Name = "donGiaDataGridViewTextBoxColumn1";
+            this.columnHeader1.Text = "Tên Món Ăn";
+            this.columnHeader1.Width = 267;
             // 
-            // checkedListBox1
+            // columnHeader2
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(112, 66);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
-            this.checkedListBox1.TabIndex = 3;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            this.columnHeader2.Text = "Đơn Giá Món Ăn";
+            this.columnHeader2.Width = 339;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(57, 218);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(93, 17);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Các món ăn";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(57, 354);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(131, 17);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Các dịch vụ khác";
+            // 
+            // listDichVu
+            // 
+            this.listDichVu.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.listDichVu.Alignment = System.Windows.Forms.ListViewAlignment.Default;
+            this.listDichVu.CheckBoxes = true;
+            this.listDichVu.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.tenDichVu,
+            this.donGiaDichVu});
+            this.listDichVu.GridLines = true;
+            this.listDichVu.HideSelection = false;
+            this.listDichVu.HoverSelection = true;
+            this.listDichVu.Location = new System.Drawing.Point(60, 374);
+            this.listDichVu.Name = "listDichVu";
+            this.listDichVu.Size = new System.Drawing.Size(610, 114);
+            this.listDichVu.TabIndex = 10;
+            this.listDichVu.UseCompatibleStateImageBehavior = false;
+            this.listDichVu.View = System.Windows.Forms.View.Details;
+            // 
+            // tenDichVu
+            // 
+            this.tenDichVu.Text = "Tên Dịch Vụ";
+            this.tenDichVu.Width = 267;
+            // 
+            // donGiaDichVu
+            // 
+            this.donGiaDichVu.Text = "Đơn Giá Dịch Vụ";
+            this.donGiaDichVu.Width = 339;
+            // 
+            // cABindingSource
+            // 
+            this.cABindingSource.DataMember = "CA";
+            this.cABindingSource.DataSource = this.dataDichVuBindingSource;
+            // 
+            // btnCa
+            // 
+            this.btnCa.BackColor = System.Drawing.Color.White;
+            this.btnCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCa.ForeColor = System.Drawing.Color.Orange;
+            this.btnCa.Location = new System.Drawing.Point(12, 14);
+            this.btnCa.Name = "btnCa";
+            this.btnCa.Size = new System.Drawing.Size(185, 26);
+            this.btnCa.TabIndex = 16;
+            this.btnCa.Text = "Danh sách ca";
+            this.btnCa.UseVisualStyleBackColor = false;
+            this.btnCa.Click += new System.EventHandler(this.btnCa_Click);
             // 
             // PhieuDatTiec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(730, 609);
-            this.Controls.Add(this.dgvDichVu);
+            this.ClientSize = new System.Drawing.Size(730, 553);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.listDichVu);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.listMonAn);
             this.Controls.Add(this.panel9);
-            this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -701,20 +579,18 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataDichVuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataDichVu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sANHBindingSource)).EndInit();
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThucAn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONANBindingSource1)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mONANBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dICHVUBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mONANBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataDichVu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cABindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -736,21 +612,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel5;
         private DataDichVu dataDichVu;
         private System.Windows.Forms.BindingSource dataDichVuBindingSource;
         private System.Windows.Forms.ComboBox cbbSanh;
 
         private System.Windows.Forms.Button btnInPhieu;
-        private System.Windows.Forms.DataGridView dgvThucAn;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.DataGridView dgvDichVu;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cbbMaCa;
         private System.Windows.Forms.TextBox txbGiaBan;
         private System.Windows.Forms.Label label2;
@@ -762,19 +629,23 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.BindingSource sANHBindingSource;
         private DataDichVuTableAdapters.SANHTableAdapter sANHTableAdapter;
-        private System.Windows.Forms.BindingSource cABindingSource;
         private DataDichVuTableAdapters.CATableAdapter cATableAdapter;
         private System.Windows.Forms.BindingSource mONANBindingSource;
         private DataDichVuTableAdapters.MONANTableAdapter mONANTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maMonAnDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenMonAnDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn donGiaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource mONANBindingSource1;
         private System.Windows.Forms.BindingSource dICHVUBindingSource;
         private DataDichVuTableAdapters.DICHVUTableAdapter dICHVUTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maDichVuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenDichVuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn donGiaDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private DataDichVu dataDichVu1;
+        private System.Windows.Forms.ListView listMonAn;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ListView listDichVu;
+        private System.Windows.Forms.ColumnHeader tenDichVu;
+        private System.Windows.Forms.ColumnHeader donGiaDichVu;
+        private System.Windows.Forms.BindingSource cABindingSource;
+        private System.Windows.Forms.Button btnCa;
     }
 }

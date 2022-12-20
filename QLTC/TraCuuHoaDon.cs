@@ -39,7 +39,7 @@ namespace QLTC
                 int CurrentIndex = dataGridViewTraCuuHoaDon.CurrentCell.RowIndex;
                 string a = Convert.ToString(dataGridViewTraCuuHoaDon.Rows[CurrentIndex].Cells[0].Value.ToString());
                 string deletedStr3 = "Delete from HoaDon where HoaDon.id='" + a + "'";
-                provider.ExecuteDelete(deletedStr3);
+                //provider.ExecuteDelete(deletedStr3);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter();
                 string query = @"Select h.id, h.MaHoaDon,t.MaDatTiec,p.MaKhachhang, p.TenKhachHang, s.DonGiaToiThieu as TienSanh, dv.GiaDichVu, td.GiaThucDon, h.TienPhat, h.TienCoc, h.TongTienHoaDon ,h.TienConLai
@@ -48,7 +48,7 @@ namespace QLTC
               left join ThongTinSanh s on s.id = h.IdLoaiSanh
               left join DichVu dv on dv.id = h.IdDichVu
               left join ThucDon td on td.id = h.IdThucDon";
-                dataGridViewTraCuuHoaDon.DataSource = provider.ExecuteQuery(query);
+                //dataGridViewTraCuuHoaDon.DataSource = provider.ExecuteQuery(query);
                 MessageBox.Show("Bạn đã xóa thành công!", "THÔNG BÁO", MessageBoxButtons.OK);
 
             }
@@ -87,7 +87,7 @@ namespace QLTC
               left join ThucDon td on td.id = h.IdThucDon where " + fieldFilter + " like '%" + valueFilter + "%'";
             Console.Write(query1);
             Conection provider = new Conection();
-            dataGridViewTraCuuHoaDon.DataSource = provider.;
+            //dataGridViewTraCuuHoaDon.DataSource = provider.;
 
         }
 
@@ -101,7 +101,7 @@ namespace QLTC
               left join DichVu dv on dv.id = h.IdDichVu
               left join ThucDon td on td.id = h.IdThucDon";
             Conection provider = new Conection();
-            dataGridViewTraCuuHoaDon.DataSource = provider.ExecuteQuery(query);
+            //dataGridViewTraCuuHoaDon.DataSource = provider.ExecuteQuery(query);
 
         }
 

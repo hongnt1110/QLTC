@@ -18,10 +18,10 @@ namespace QLTC
         {
             InitializeComponent();
             btnInPhieu.Enabled= false;
-            dgvThucAn.AutoGenerateColumns = false;
-            dgvDichVu.AutoGenerateColumns=false;
-            dgvDichVu.AllowUserToAddRows = true;
-            dgvThucAn.AllowUserToAddRows = true;
+            //dgvThucAn.AutoGenerateColumns = false;
+            //dgvDichVu.AutoGenerateColumns=false;
+            //dgvDichVu.AllowUserToAddRows = true;
+            //dgvThucAn.AllowUserToAddRows = true;
             txbChuRe.Text = "";
 
             txbCodau.Text = "";
@@ -32,22 +32,20 @@ namespace QLTC
 
             txbSLBan.Text = "";
             txbTienCoc.Text = "";
-            checkedListBox1.Items.Add(danhSachMonAn.CheckListThucDon(2).ToString());
-
         }
         #region Sự kiện các button
         private void btnLuu_Click(object sender, EventArgs e) // lưu thông tin xuống db
         {
-            if (dgvDichVu.Rows.Count <=1 || dgvThucAn.Rows.Count <= 1 
-                ||txbChuRe.Text == string.Empty || txbCodau.Text == string.Empty
-                || textBox1.Text == string.Empty || txbMaKhachHang.Text == string.Empty
-                || txbSLBan.Text == string.Empty || textBox2.Text == string.Empty)
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin để đặt tiện");
-            }    
-            else
-            {
-                var informMessage = MessageBox.Show("Bạn muốn lưu phiếu đặt tiệc với các thông tin này chứ","Phiếu đặt tiệc",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+            ////if (dgvDichVu.Rows.Count <=1 || dgvThucAn.Rows.Count <= 1 
+            //    ||txbChuRe.Text == string.Empty || txbCodau.Text == string.Empty
+            //    || textBox1.Text == string.Empty || txbMaKhachHang.Text == string.Empty
+            //    || txbSLBan.Text == string.Empty || textBox2.Text == string.Empty)
+            //{
+            //    MessageBox.Show("Vui lòng nhập đầy đủ thông tin để đặt tiện");
+            //}    
+            //else
+            //{
+                var informMessage = MessageBox.Show("Bạn muốn lưu phiếu đặt tiệc với các thông tin này chứ", "Phiếu đặt tiệc", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (informMessage == DialogResult.Yes)
                 {
 
@@ -60,13 +58,13 @@ namespace QLTC
                     IndicateFoodDetail(); // hiển thị chi tiết món ăn
                     IndicateServiceDetail(); // hiển thị chi tiết dịch vụ
                     btnInPhieu.Enabled = true;
-                    
+
                     //Reset();
-                }               
-                
-            }    
-            
-        }
+                //}
+
+            }
+
+    }
 
 
 
@@ -122,13 +120,13 @@ namespace QLTC
             string query = null;
             
             // Thêm vào chi tiết món ăn
-            if (dgvThucAn.Rows.Count > 0) 
+            //if (dgvThucAn.Rows.Count > 0) 
             {
        
-                for (int i = 0; i < dgvThucAn.Rows.Count - 1;i++)
+                //for (int i = 0; i < dgvThucAn.Rows.Count - 1;i++)
                 {
                    connection.Open();
-                   query = "insert into CT_MONAN (MaMonAn, MaPhieuDT) values (" + int.Parse(dgvThucAn.Rows[i].Cells[0].Value.ToString()) + ","+ int.Parse(txbMaPhieu.Text)+")";
+                   //query = "insert into CT_MONAN (MaMonAn, MaPhieuDT) values (" + int.Parse(dgvThucAn.Rows[i].Cells[0].Value.ToString()) + ","+ int.Parse(txbMaPhieu.Text)+")";
                    SqlCommand command = new SqlCommand(query, connection);
                    command.ExecuteNonQuery();
                    connection.Close();
@@ -144,13 +142,13 @@ namespace QLTC
             string query = null;
             
             // Thêm vào chi tiết dịch vụ
-            if (dgvDichVu.Rows.Count > 0)
+            //if (dgvDichVu.Rows.Count > 0)
             {
 
-                for (int i = 0; i < dgvDichVu.Rows.Count - 1; i++)
+                //for (int i = 0; i < dgvDichVu.Rows.Count - 1; i++)
                 {
                     connection.Open();
-                    query = "insert into CT_DICHVU (MaDichVu,SoLuong, MaPhieuDT) values (" + int.Parse(dgvDichVu.Rows[i].Cells[0].Value.ToString()) + ","+int.Parse(dgvDichVu.Rows[i].Cells[2].Value.ToString())+"," + int.Parse(txbMaPhieu.Text) + ")";
+                    //query = "insert into CT_DICHVU (MaDichVu,SoLuong, MaPhieuDT) values (" + int.Parse(dgvDichVu.Rows[i].Cells[0].Value.ToString()) + ","+int.Parse(dgvDichVu.Rows[i].Cells[2].Value.ToString())+"," + int.Parse(txbMaPhieu.Text) + ")";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.ExecuteNonQuery();
                     connection.Close();
@@ -178,7 +176,7 @@ namespace QLTC
                 }
 
             }
-            dgvDichVu.DataSource = billList;
+            //dgvDichVu.DataSource = billList;
             
        
         }
@@ -199,7 +197,7 @@ namespace QLTC
                 }
 
             }          
-            dgvThucAn.DataSource = billList;
+            //dgvThucAn.DataSource = billList;
            
         }
 
@@ -241,22 +239,11 @@ namespace QLTC
         //    }
         //}
         #endregion
-
-
-
-
-        private void btnDanhSachCa_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            DanhSachCa ca = new DanhSachCa();
-            ca.ShowDialog();
-        }
-
         private void cbbSanh_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
+        DataDichVuTableAdapters.MONANTableAdapter monAn = new DataDichVuTableAdapters.MONANTableAdapter();
         private void PhieuDatTiec_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dataDichVu.DICHVU' table. You can move, or remove it, as needed.
@@ -268,6 +255,35 @@ namespace QLTC
             // TODO: This line of code loads data into the 'dataDichVu.SANH' table. You can move, or remove it, as needed.
             this.sANHTableAdapter.Fill(this.dataDichVu.SANH);
 
+            DataTable billList = new DataTable();
+            string connectionString = ConfigurationManager.ConnectionStrings["QLTC.Properties.Settings.QLTCConnectionString"].ConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("select TenMonAn,DonGia from MONAN", connection))
+                {
+                    connection.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        ListViewItem lv = new ListViewItem(reader[0].ToString());
+                        lv.SubItems.Add(reader[1].ToString());
+                        listMonAn.Items.Add(lv);
+                    }
+                    connection.Close();
+                }
+                using (SqlCommand cmd = new SqlCommand("select TenDichVu,DonGia from DICHVU", connection))
+                {
+                    connection.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        ListViewItem lv = new ListViewItem(reader[0].ToString());
+                        lv.SubItems.Add(reader[1].ToString());
+                        listDichVu.Items.Add(lv);
+                    }
+                    connection.Close();
+                }
+            }
         }
 
         private void listToolStripButton_Click(object sender, EventArgs e)
@@ -285,6 +301,18 @@ namespace QLTC
         DataDichVuTableAdapters.MONANTableAdapter danhSachMonAn = new DataDichVuTableAdapters.MONANTableAdapter();
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCa_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DanhSachCa ca = new DanhSachCa();
+            ca.ShowDialog();
         }
     }
 }
