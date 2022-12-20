@@ -63,7 +63,7 @@ CREATE TABLE PHIEUDATTIEC(
 	TienCoc	money not null,
 	SoLuongBan	int not null,
 	MaCa	int not null,
-	GiaBan money not null
+	GiaBan money not null,
 	CONSTRAINT PK_PHIEUDT PRIMARY KEY (MaPhieuDT),
 	CONSTRAINT FK_PHIEU_KH FOREIGN KEY (MaKH) REFERENCES KHACHHANG(MaKH),
 	CONSTRAINT FK_PHIEU_CA FOREIGN KEY (MaCa) REFERENCES CA(MaCa),

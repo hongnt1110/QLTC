@@ -9709,12 +9709,35 @@ SELECT MaHoaDon, NgayThanhToan, TongTienHD, TienConLai, MaPhieuDT FROM HOADON WH
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT MaHoaDon, NgayThanhToan, TongTienHD, TienConLai, MaPhieuDT FROM dbo.HOADON" +
                 "";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT MaHoaDon, NgayThanhToan, TongTienHD, TienConLai, MaPhieuDT FROM dbo.HOADON" +
+                "";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        hd.MaHoaDon, hd.NgayThanhToan, hd.TongTienHD, hd.TienConLai, hd.MaPhieuDT, kh.MaKH
+FROM            HOADON AS hd INNER JOIN
+                         PHIEUDATTIEC AS p ON hd.MaPhieuDT = p.MaPhieuDT INNER JOIN
+                         KHACHHANG AS kh ON p.MaKH = kh.MaKH
+WHERE        (kh.MaKH = @MaKH)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaKH", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MaKH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT        hd.MaHoaDon, hd.NgayThanhToan, hd.TongTienHD, hd.TienConLai, hd.MaPhieuDT, kh.TenKH
+FROM            HOADON AS hd INNER JOIN
+                         PHIEUDATTIEC AS p ON hd.MaPhieuDT = p.MaPhieuDT INNER JOIN
+                         KHACHHANG AS kh ON p.MaKH = kh.MaKH
+WHERE        (kh.TenKH = @TenKH)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TenKH", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "TenKH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9736,6 +9759,92 @@ SELECT MaHoaDon, NgayThanhToan, TongTienHD, TienConLai, MaPhieuDT FROM HOADON WH
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataDichVu.HOADONDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataDichVu.HOADONDataTable dataTable = new DataDichVu.HOADONDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int List(DataDichVu.HOADONDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataDichVu.HOADONDataTable ListHoaDon() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            DataDichVu.HOADONDataTable dataTable = new DataDichVu.HOADONDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Search(DataDichVu.HOADONDataTable dataTable, int MaKH) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MaKH));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataDichVu.HOADONDataTable SearchMaKH(int MaKH) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MaKH));
+            DataDichVu.HOADONDataTable dataTable = new DataDichVu.HOADONDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int SearchName(DataDichVu.HOADONDataTable dataTable, string TenKH) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((TenKH == null)) {
+                throw new global::System.ArgumentNullException("TenKH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(TenKH));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataDichVu.HOADONDataTable SearchTenKH(string TenKH) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((TenKH == null)) {
+                throw new global::System.ArgumentNullException("TenKH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(TenKH));
+            }
             DataDichVu.HOADONDataTable dataTable = new DataDichVu.HOADONDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -11608,7 +11717,7 @@ SELECT MaPhieuDT, MaKH, NgayDaiTiec, TenChuRe, TenCoDau, MaSanh, TienCoc, SoLuon
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT MaPhieuDT, MaKH, NgayDaiTiec, TenChuRe, TenCoDau, MaSanh, TienCoc, SoLuong" +
@@ -11619,6 +11728,20 @@ SELECT MaPhieuDT, MaKH, NgayDaiTiec, TenChuRe, TenCoDau, MaSanh, TienCoc, SoLuon
             this._commandCollection[1].CommandText = "SELECT MaPhieuDT, MaKH, NgayDaiTiec, TenChuRe, TenCoDau, MaSanh, TienCoc, SoLuong" +
                 "Ban, MaCa, GiaBan FROM dbo.PHIEUDATTIEC";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT MaPhieuDT, MaKH, NgayDaiTiec, TenChuRe, TenCoDau, MaSanh, TienCoc, SoLuong" +
+                "Ban, MaCa, GiaBan FROM dbo.PHIEUDATTIEC WHERE MaKH = @MaKH";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaKH", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MaKH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT        p.MaPhieuDT, p.MaKH, p.NgayDaiTiec, p.TenChuRe, p.TenCoDau, p.MaSanh, p.TienCoc, p.SoLuongBan, p.MaCa, p.GiaBan, kh.TenKH
+FROM            PHIEUDATTIEC AS p INNER JOIN
+                         KHACHHANG AS kh ON p.MaKH = kh.MaKH
+WHERE        (kh.TenKH = @TenKH)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TenKH", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "TenKH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11664,6 +11787,68 @@ SELECT MaPhieuDT, MaKH, NgayDaiTiec, TenChuRe, TenCoDau, MaSanh, TienCoc, SoLuon
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DataDichVu.PHIEUDATTIECDataTable ListPhieuDatTiec() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            DataDichVu.PHIEUDATTIECDataTable dataTable = new DataDichVu.PHIEUDATTIECDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Search(DataDichVu.PHIEUDATTIECDataTable dataTable, int MaKH) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MaKH));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataDichVu.PHIEUDATTIECDataTable SearchPhieuTheoMa(int MaKH) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MaKH));
+            DataDichVu.PHIEUDATTIECDataTable dataTable = new DataDichVu.PHIEUDATTIECDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int SearchName(DataDichVu.PHIEUDATTIECDataTable dataTable, string TenKH) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((TenKH == null)) {
+                throw new global::System.ArgumentNullException("TenKH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(TenKH));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataDichVu.PHIEUDATTIECDataTable SearchTenKH(string TenKH) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((TenKH == null)) {
+                throw new global::System.ArgumentNullException("TenKH");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(TenKH));
+            }
             DataDichVu.PHIEUDATTIECDataTable dataTable = new DataDichVu.PHIEUDATTIECDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
