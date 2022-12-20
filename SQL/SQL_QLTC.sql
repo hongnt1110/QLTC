@@ -130,16 +130,17 @@ insert into KHACHHANG values (N'Hải', N'Thanh Hóa', '0123213423')
 select*from KHACHHANG
 
 /*thêm ca*/
-insert into CA values ('Trưa', '12H00 - 15H00')
+insert into CA values (N'Sáng', '8H00 - 11H00')
+insert into CA values (N'Trưa', '12H00 - 15H00')
 insert into CA values (N'Tối', '18H00 - 21H00')
 select *from CA
 
 /*Thêm loại sảnh*/
-insert into LOAISANH values ('A', 10000000)
-insert into LOAISANH values ('B', 20000000)
-insert into LOAISANH values ('C', 30000000)
-insert into LOAISANH values ('D', 40000000)
-insert into LOAISANH values ('E', 40000000)
+insert into LOAISANH values (N'Sảnh A', 10000000)
+insert into LOAISANH values (N'Sảnh B', 20000000)
+insert into LOAISANH values (N'Sảnh C', 30000000)
+insert into LOAISANH values (N'Sảnh D', 40000000)
+insert into LOAISANH values (N'Sảnh E', 40000000)
 select *from LOAISANH
 /*thêm sảnh */
 insert into SANH values ('Rose',1,100, 1000000, N'Trống')
@@ -168,7 +169,11 @@ insert into DICHVU values (N'Quà đáp lễ', 5000000)
 insert into DICHVU values (N'Thiệp cưới', 8000000)
 insert into DICHVU values (N'Truyền hình trực tiếp', 20000000)
 /*thêm phiếu đặt tiệc*/
+UPDATE PHIEUDATTIEC
+SET TenChuRe = N'Nguyễn Ngọc Luân', TenCoDau = N'Huỳnh Thị Kiều Trang'
+WHERE MaPhieuDT = 1
 insert into PHIEUDATTIEC values (2,'18/02/2002','4','4',2,45,23,3,3544)
+insert into PHIEUDATTIEC values (3,'20/02/2002',N'Võ Văn Ngân',N'Kha Vạn Cân',2,45,23,3,3544)
 select *from PHIEUDATTIEC
 
 
@@ -222,11 +227,11 @@ begin
 	print ('Da tu dong them hoa don')
 end
 
-select * from HOADON
+select MaHoaDon AS 'Mã hóa đơn' from HOADON
 select *from CT_DICHVU
 select *from HOADON
 select *from DICHVU
-
+select *from DOANHSO
 insert into HOADON values ('16/12/2022',1000,500,1)
 insert into HOADON values ('16/12/2022',1111,555,2)
 insert into HOADON values ('17/12/2022',2000,500,1)

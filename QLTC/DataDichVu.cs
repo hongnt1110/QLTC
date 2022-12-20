@@ -4,6 +4,10 @@
 
     partial class DataDichVu
     {
+        partial class SANHDataTable
+        {
+        }
+
         partial class CT_HOADONDataTable
         {
         }

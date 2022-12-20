@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonInHD = new System.Windows.Forms.Button();
             this.buttonXem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridViewTraCuuHoaDon = new System.Windows.Forms.DataGridView();
@@ -47,7 +46,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.buttonInHD);
+            this.panel1.BackColor = System.Drawing.SystemColors.Info;
             this.panel1.Controls.Add(this.buttonXem);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.button5);
@@ -62,25 +61,17 @@
             this.panel1.Size = new System.Drawing.Size(724, 417);
             this.panel1.TabIndex = 11;
             // 
-            // buttonInHD
-            // 
-            this.buttonInHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonInHD.Location = new System.Drawing.Point(491, 382);
-            this.buttonInHD.Name = "buttonInHD";
-            this.buttonInHD.Size = new System.Drawing.Size(90, 26);
-            this.buttonInHD.TabIndex = 12;
-            this.buttonInHD.Text = "In hóa đơn";
-            this.buttonInHD.UseVisualStyleBackColor = true;
-            // 
             // buttonXem
             // 
-            this.buttonXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonXem.Location = new System.Drawing.Point(470, 125);
+            this.buttonXem.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonXem.ForeColor = System.Drawing.Color.Orange;
+            this.buttonXem.Location = new System.Drawing.Point(550, 125);
             this.buttonXem.Name = "buttonXem";
             this.buttonXem.Size = new System.Drawing.Size(75, 23);
             this.buttonXem.TabIndex = 13;
             this.buttonXem.Text = "Xem";
-            this.buttonXem.UseVisualStyleBackColor = true;
+            this.buttonXem.UseVisualStyleBackColor = false;
             this.buttonXem.Click += new System.EventHandler(this.buttonXem_Click);
             // 
             // groupBox1
@@ -98,32 +89,38 @@
             // 
             // dataGridViewTraCuuHoaDon
             // 
+            this.dataGridViewTraCuuHoaDon.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewTraCuuHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTraCuuHoaDon.Location = new System.Drawing.Point(6, 29);
             this.dataGridViewTraCuuHoaDon.Name = "dataGridViewTraCuuHoaDon";
             this.dataGridViewTraCuuHoaDon.Size = new System.Drawing.Size(690, 189);
             this.dataGridViewTraCuuHoaDon.TabIndex = 0;
+            this.dataGridViewTraCuuHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTraCuuHoaDon_CellContentClick_1);
             // 
             // button5
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.Orange;
             this.button5.Location = new System.Drawing.Point(614, 384);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(92, 23);
             this.button5.TabIndex = 11;
             this.button5.Text = "Thoát";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // buttonXoa
             // 
-            this.buttonXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonXoa.Location = new System.Drawing.Point(377, 384);
+            this.buttonXoa.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonXoa.ForeColor = System.Drawing.Color.Orange;
+            this.buttonXoa.Location = new System.Drawing.Point(16, 384);
             this.buttonXoa.Name = "buttonXoa";
-            this.buttonXoa.Size = new System.Drawing.Size(75, 23);
+            this.buttonXoa.Size = new System.Drawing.Size(90, 23);
             this.buttonXoa.TabIndex = 10;
             this.buttonXoa.Text = "Xóa";
-            this.buttonXoa.UseVisualStyleBackColor = true;
+            this.buttonXoa.UseVisualStyleBackColor = false;
             this.buttonXoa.Click += new System.EventHandler(this.button4_Click);
             // 
             // label1
@@ -131,7 +128,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Orange;
-            this.label1.Location = new System.Drawing.Point(253, 0);
+            this.label1.Location = new System.Drawing.Point(254, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(199, 29);
             this.label1.TabIndex = 0;
@@ -152,7 +149,7 @@
             this.radioButtonTenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonTenKH.Location = new System.Drawing.Point(259, 78);
             this.radioButtonTenKH.Name = "radioButtonTenKH";
-            this.radioButtonTenKH.Size = new System.Drawing.Size(120, 20);
+            this.radioButtonTenKH.Size = new System.Drawing.Size(121, 20);
             this.radioButtonTenKH.TabIndex = 4;
             this.radioButtonTenKH.TabStop = true;
             this.radioButtonTenKH.Text = "Mã Khách Hàng";
@@ -161,13 +158,15 @@
             // 
             // buttonTim
             // 
-            this.buttonTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTim.Location = new System.Drawing.Point(587, 125);
+            this.buttonTim.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTim.ForeColor = System.Drawing.Color.Orange;
+            this.buttonTim.Location = new System.Drawing.Point(631, 125);
             this.buttonTim.Name = "buttonTim";
             this.buttonTim.Size = new System.Drawing.Size(75, 23);
             this.buttonTim.TabIndex = 6;
             this.buttonTim.Text = "Tìm ";
-            this.buttonTim.UseVisualStyleBackColor = true;
+            this.buttonTim.UseVisualStyleBackColor = false;
             this.buttonTim.Click += new System.EventHandler(this.buttonTim_Click);
             // 
             // radioButtonMaHD
@@ -176,7 +175,7 @@
             this.radioButtonMaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonMaHD.Location = new System.Drawing.Point(392, 78);
             this.radioButtonMaHD.Name = "radioButtonMaHD";
-            this.radioButtonMaHD.Size = new System.Drawing.Size(125, 20);
+            this.radioButtonMaHD.Size = new System.Drawing.Size(126, 20);
             this.radioButtonMaHD.TabIndex = 5;
             this.radioButtonMaHD.TabStop = true;
             this.radioButtonMaHD.Text = "Tên Khách Hàng";
@@ -186,6 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(726, 431);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -213,6 +213,5 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button buttonXoa;
         private System.Windows.Forms.Button buttonXem;
-        private System.Windows.Forms.Button buttonInHD;
     }
 }

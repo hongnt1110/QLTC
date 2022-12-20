@@ -102,6 +102,12 @@
     <Compile Include="DanhSachCa.Designer.cs">
       <DependentUpon>DanhSachCa.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhSachDoanhSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhSachDoanhSo.Designer.cs">
+      <DependentUpon>DanhSachDoanhSo.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhSachLoaiSanh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataDichVu.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataProvider.cs" />
     <Compile Include="Delegates.cs" />
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
@@ -236,6 +243,12 @@
     <Compile Include="TraCuuHoaDon.Designer.cs">
       <DependentUpon>TraCuuHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="TraCuuTiecCuoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TraCuuTiecCuoi.designer.cs">
+      <DependentUpon>TraCuuTiecCuoi.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminChildForm\DichVuKhacForm.resx">
       <DependentUpon>DichVuKhacForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DanhSachCa.resx">
       <DependentUpon>DanhSachCa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhSachDoanhSo.resx">
+      <DependentUpon>DanhSachDoanhSo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhSachLoaiSanh.resx">
       <DependentUpon>DanhSachLoaiSanh.cs</DependentUpon>
@@ -320,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TraCuuHoaDon.resx">
       <DependentUpon>TraCuuHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraCuuTiecCuoi.resx">
+      <DependentUpon>TraCuuTiecCuoi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataDichVu.xsc">
       <DependentUpon>DataDichVu.xsd</DependentUpon>

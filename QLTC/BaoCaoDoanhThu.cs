@@ -195,5 +195,12 @@ namespace QLTC
                 main.ShowDialog();
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DanhSachDoanhSo ds = new DanhSachDoanhSo();
+            ds.ShowDialog();
+        }
     }
 }
