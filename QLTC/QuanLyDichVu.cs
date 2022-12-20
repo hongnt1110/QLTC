@@ -18,7 +18,7 @@ namespace QLTC
         }
         public QuanLyDichVu(int a):this()
         {
-            //tabDichVu.TabPages[a].SuspendLa;
+            tabDichVu.SelectedTab = tabDichVu.TabPages[a];
         }
         private void QuanLyDichVu_Load(object sender, EventArgs e)
         {
@@ -53,7 +53,7 @@ namespace QLTC
         {
             if (danhSachThucDon.CurrentRow == null)
             {
-                MessageBox.Show("Hãy chọn dịch vụ để sửa?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Hãy chọn món ăn để sửa?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 danhSachThucDon.DataSource = DanhSachMonAn.ListThucDon();
             }
             else

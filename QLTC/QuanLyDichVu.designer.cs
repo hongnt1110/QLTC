@@ -516,9 +516,9 @@ namespace QLTC
             // 
             // tabDichVu
             // 
+            this.tabDichVu.Controls.Add(this.sanhCuoi);
             this.tabDichVu.Controls.Add(this.thucDon);
             this.tabDichVu.Controls.Add(this.dichVu);
-            this.tabDichVu.Controls.Add(this.sanhCuoi);
             this.tabDichVu.Location = new System.Drawing.Point(10, 42);
             this.tabDichVu.Name = "tabDichVu";
             this.tabDichVu.SelectedIndex = 0;

@@ -26,27 +26,11 @@ namespace QLTC
                 dangNhap.ShowDialog ();
             }
         }
-
-        private void dịchVụToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            QuanLyDichVu quanLyDichVu = new QuanLyDichVu();
-            quanLyDichVu.ShowDialog();
-        }
-
         private void báoCáoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BaoCaoDoanhThu add = new BaoCaoDoanhThu();
             add.ShowDialog();
         }
-
-        private void sảnhCướiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //this.Hide();
-            //QuanLyDichVu quanLyDichVu = new QuanLyDichVu(2);
-            //quanLyDichVu.ShowDialog();
-        }
-
         private void ManHinhChinh_Load(object sender, EventArgs e)
         {
 
@@ -61,6 +45,37 @@ namespace QLTC
         {
             BaoCaoDoanhThu add = new BaoCaoDoanhThu();
             add.ShowDialog();
+        }
+        private void sảnhCướiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            QuanLyDichVu quanLyDichVu = new QuanLyDichVu(0);
+            quanLyDichVu.ShowDialog();
+        }
+        private void thựcĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            QuanLyDichVu quanLyDichVu = new QuanLyDichVu(1);
+            quanLyDichVu.ShowDialog();
+        }
+
+        private void dịchVụKhácToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            QuanLyDichVu quanLyDichVu = new QuanLyDichVu(2);
+            quanLyDichVu.ShowDialog();
+        }
+
+        private void đặtTiệcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PhieuDatTiec pdt = new PhieuDatTiec();
+            pdt.ShowDialog();
+        }
+
+        private void lậpHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HoaDon hoaDon = new HoaDon();
+            hoaDon.ShowDialog();
         }
     }
 }

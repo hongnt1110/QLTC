@@ -36,5 +36,10 @@ namespace QLTC
                 this.Hide();
             }
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
