@@ -14,7 +14,7 @@ namespace QLTC
 {
     public partial class BaoCaoDoanhThu : Form
     {
-        public string connectionString = @"Data Source=DESKTOP-NFB30FI;Initial Catalog=QLTC;Integrated Security=True";
+        public string connectionString = @"Data Source=LUAN-LENOVO\LUANNGUYEN;Initial Catalog=QLTC;Integrated Security=True";
         
         BindingSource binding;
         List<BaoCaoNgay> BaoCaoNgayS;
@@ -183,9 +183,17 @@ namespace QLTC
             SqlCommand cmd = new SqlCommand(LuuButton, conn);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Lưu Thành Công!", "Thông báo", MessageBoxButtons.OK);
-            
-            
+        }
 
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult xacNhan = MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (xacNhan == DialogResult.Yes)
+            {
+                this.Hide();
+                ManHinhChinh main = new ManHinhChinh();
+                main.ShowDialog();
+            }
         }
     }
 }

@@ -28,23 +28,13 @@ namespace QLTC
         }
         private void báoCáoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             BaoCaoDoanhThu add = new BaoCaoDoanhThu();
             add.ShowDialog();
         }
         private void ManHinhChinh_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void lậpBáoCáoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void báoCáoDoanhThuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            BaoCaoDoanhThu add = new BaoCaoDoanhThu();
-            add.ShowDialog();
         }
         private void sảnhCướiToolStripMenuItem_Click(object sender, EventArgs e)
         {

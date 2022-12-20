@@ -89,5 +89,15 @@ namespace QLTC
             inHoaDon.ShowDialog();
            
         }
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult xacNhan = MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (xacNhan == DialogResult.Yes)
+            {
+                this.Hide();
+                ManHinhChinh main = new ManHinhChinh();
+                main.ShowDialog();
+            }
+        }
     }
 }

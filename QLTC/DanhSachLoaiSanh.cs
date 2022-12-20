@@ -43,7 +43,7 @@ namespace QLTC
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            DialogResult xacNhan = MessageBox.Show("Có muốn thoát không?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult xacNhan = MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (xacNhan == DialogResult.Yes)
             {
                 this.Hide();

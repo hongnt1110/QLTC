@@ -17,7 +17,7 @@ namespace QLTC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BaoCaoDoanhThu());
+            Application.Run(new ManHinhChinh());
         }
     }
 }

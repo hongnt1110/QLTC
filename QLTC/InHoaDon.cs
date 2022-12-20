@@ -27,6 +27,11 @@ namespace QLTC
             Print(panelPrint);
         }
 
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+           this.Hide();
+        }
+
         private void Print(Panel panel)
         {
             PrinterSettings ps = new PrinterSettings();
