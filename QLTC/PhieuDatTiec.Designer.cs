@@ -50,13 +50,15 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataDichVu1 = new QLTC.DataDichVu();
             this.listMonAn = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tenMonAn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.donGiaMonAn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.maMonAn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.listDichVu = new System.Windows.Forms.ListView();
             this.tenDichVu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.donGiaDichVu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.maDichVu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -71,11 +73,11 @@
             this.txbGiaBan = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tienCoc = new System.Windows.Forms.TextBox();
             this.cbbMaCa = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.soDienThoaiKH = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataDichVuBindingSource)).BeginInit();
@@ -241,8 +243,9 @@
             this.listMonAn.Alignment = System.Windows.Forms.ListViewAlignment.Default;
             this.listMonAn.CheckBoxes = true;
             this.listMonAn.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
+            this.tenMonAn,
+            this.donGiaMonAn,
+            this.maMonAn});
             this.listMonAn.GridLines = true;
             this.listMonAn.HideSelection = false;
             this.listMonAn.HoverSelection = true;
@@ -253,15 +256,20 @@
             this.listMonAn.UseCompatibleStateImageBehavior = false;
             this.listMonAn.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader1
+            // tenMonAn
             // 
-            this.columnHeader1.Text = "Tên Món Ăn";
-            this.columnHeader1.Width = 267;
+            this.tenMonAn.Text = "Tên Món Ăn";
+            this.tenMonAn.Width = 270;
             // 
-            // columnHeader2
+            // donGiaMonAn
             // 
-            this.columnHeader2.Text = "Đơn Giá Món Ăn";
-            this.columnHeader2.Width = 339;
+            this.donGiaMonAn.Text = "Đơn Giá Món Ăn";
+            this.donGiaMonAn.Width = 207;
+            // 
+            // maMonAn
+            // 
+            this.maMonAn.Text = "Mã Món Ăn";
+            this.maMonAn.Width = 130;
             // 
             // label13
             // 
@@ -290,11 +298,12 @@
             this.listDichVu.CheckBoxes = true;
             this.listDichVu.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.tenDichVu,
-            this.donGiaDichVu});
+            this.donGiaDichVu,
+            this.maDichVu});
             this.listDichVu.GridLines = true;
             this.listDichVu.HideSelection = false;
             this.listDichVu.HoverSelection = true;
-            this.listDichVu.Location = new System.Drawing.Point(61, 335);
+            this.listDichVu.Location = new System.Drawing.Point(61, 337);
             this.listDichVu.Name = "listDichVu";
             this.listDichVu.Size = new System.Drawing.Size(610, 114);
             this.listDichVu.TabIndex = 10;
@@ -304,12 +313,17 @@
             // tenDichVu
             // 
             this.tenDichVu.Text = "Tên Dịch Vụ";
-            this.tenDichVu.Width = 267;
+            this.tenDichVu.Width = 268;
             // 
             // donGiaDichVu
             // 
             this.donGiaDichVu.Text = "Đơn Giá Dịch Vụ";
-            this.donGiaDichVu.Width = 339;
+            this.donGiaDichVu.Width = 215;
+            // 
+            // maDichVu
+            // 
+            this.maDichVu.Text = "Mã Dịch Vụ";
+            this.maDichVu.Width = 125;
             // 
             // label3
             // 
@@ -350,7 +364,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(22, 50);
+            this.label10.Location = new System.Drawing.Point(22, 47);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 17);
@@ -422,7 +436,7 @@
             this.cbbSanh.DataSource = this.sANHBindingSource;
             this.cbbSanh.DisplayMember = "TenSanh";
             this.cbbSanh.FormattingEnabled = true;
-            this.cbbSanh.Location = new System.Drawing.Point(86, 50);
+            this.cbbSanh.Location = new System.Drawing.Point(86, 47);
             this.cbbSanh.Name = "cbbSanh";
             this.cbbSanh.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cbbSanh.Size = new System.Drawing.Size(126, 21);
@@ -454,21 +468,21 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(26, 82);
+            this.label6.Location = new System.Drawing.Point(26, 87);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(25, 17);
             this.label6.TabIndex = 4;
             this.label6.Text = "Ca";
             // 
-            // textBox1
+            // tienCoc
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(594, 43);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(113, 20);
-            this.textBox1.TabIndex = 27;
+            this.tienCoc.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tienCoc.Location = new System.Drawing.Point(594, 43);
+            this.tienCoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tienCoc.Name = "tienCoc";
+            this.tienCoc.Size = new System.Drawing.Size(113, 20);
+            this.tienCoc.TabIndex = 27;
             // 
             // cbbMaCa
             // 
@@ -477,7 +491,7 @@
             this.cbbMaCa.DataSource = this.cABindingSource;
             this.cbbMaCa.DisplayMember = "LoaiCa";
             this.cbbMaCa.FormattingEnabled = true;
-            this.cbbMaCa.Location = new System.Drawing.Point(86, 79);
+            this.cbbMaCa.Location = new System.Drawing.Point(86, 84);
             this.cbbMaCa.Name = "cbbMaCa";
             this.cbbMaCa.Size = new System.Drawing.Size(126, 21);
             this.cbbMaCa.TabIndex = 22;
@@ -485,9 +499,10 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.soDienThoaiKH);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.cbbMaCa);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.tienCoc);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.txbGiaBan);
@@ -501,7 +516,6 @@
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 54);
@@ -510,26 +524,26 @@
             this.panel2.Size = new System.Drawing.Size(730, 125);
             this.panel2.TabIndex = 1;
             // 
-            // label4
+            // soDienThoaiKH
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(254, 80);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 17);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Giá Bàn";
+            this.soDienThoaiKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.soDienThoaiKH.Location = new System.Drawing.Point(425, 85);
+            this.soDienThoaiKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.soDienThoaiKH.Name = "soDienThoaiKH";
+            this.soDienThoaiKH.Size = new System.Drawing.Size(282, 20);
+            this.soDienThoaiKH.TabIndex = 29;
             // 
-            // textBox2
+            // label2
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.Location = new System.Drawing.Point(347, 82);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(118, 20);
-            this.textBox2.TabIndex = 28;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(251, 87);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(169, 17);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Số điện thoại khách hàng";
             // 
             // PhieuDatTiec
             // 
@@ -585,8 +599,8 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private DataDichVu dataDichVu1;
         private System.Windows.Forms.ListView listMonAn;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader tenMonAn;
+        private System.Windows.Forms.ColumnHeader donGiaMonAn;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ListView listDichVu;
@@ -611,10 +625,12 @@
         private System.Windows.Forms.TextBox txbGiaBan;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tienCoc;
         private System.Windows.Forms.ComboBox cbbMaCa;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox soDienThoaiKH;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ColumnHeader maMonAn;
+        private System.Windows.Forms.ColumnHeader maDichVu;
     }
 }

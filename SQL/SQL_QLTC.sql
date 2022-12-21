@@ -12,6 +12,7 @@ CREATE TABLE TAIKHOAN(
 	Email varchar(50) not null,
 	CONSTRAINT PK_TAIKHOAN PRIMARY KEY (TenTaiKhoan)
 )
+Insert into TAIKHOAN VALUES('hongtn','123456','hongtn@gmail.com')
 CREATE TABLE LOAISANH(
 	MaLoaiSanh int identity(1,1) not null,
 	LoaiSanh nvarchar(100) not null,
@@ -48,7 +49,7 @@ CREATE TABLE CA(
 )
 CREATE TABLE KHACHHANG(
 	MaKH	int identity(1,1) not null,
-	TenKH	nvarchar(50) not null,
+	TenKH	nvarchar(100) not null,
 	DiaChi	nvarchar(300) not null,
 	SoDienThoai	varchar(11) not null,
 	CONSTRAINT PK_KHACHHANG PRIMARY KEY (MaKH)
@@ -57,13 +58,12 @@ CREATE TABLE PHIEUDATTIEC(
 	MaPhieuDT	int identity(1,1) not null,
 	MaKH	int not null,
 	NgayDaiTiec	date not null,
-	TenChuRe nvarchar (50) not null,
-	TenCoDau nvarchar (50) not null,
+	TenChuRe nvarchar (100) not null,
+	TenCoDau nvarchar (100) not null,
 	MaSanh	int not null,
 	TienCoc	money not null,
 	SoLuongBan	int not null,
 	MaCa	int not null,
-	GiaBan money not null,
 	CONSTRAINT PK_PHIEUDT PRIMARY KEY (MaPhieuDT),
 	CONSTRAINT FK_PHIEU_KH FOREIGN KEY (MaKH) REFERENCES KHACHHANG(MaKH),
 	CONSTRAINT FK_PHIEU_CA FOREIGN KEY (MaCa) REFERENCES CA(MaCa),
@@ -127,6 +127,7 @@ Insert into THAMSO VALUES('TiLePhat',0.01);
 insert into KHACHHANG values ('Nam', 'TP HCM', '00000000')
 insert into KHACHHANG values (N'Nữ', 'TP HCM', '023232100')
 insert into KHACHHANG values (N'Hải', N'Thanh Hóa', '0123213423')
+insert into KHACHHANG values (N'Luân', N'Ninh Thuận', '0854042308')
 select*from KHACHHANG
 
 /*thêm ca*/
@@ -172,8 +173,8 @@ insert into DICHVU values (N'Truyền hình trực tiếp', 20000000)
 UPDATE PHIEUDATTIEC
 SET TenChuRe = N'Nguyễn Ngọc Luân', TenCoDau = N'Huỳnh Thị Kiều Trang'
 WHERE MaPhieuDT = 1
-insert into PHIEUDATTIEC values (2,'18/02/2002','4','4',2,45,23,3,3544)
-insert into PHIEUDATTIEC values (3,'20/02/2002',N'Võ Văn Ngân',N'Kha Vạn Cân',2,45,23,3,3544)
+insert into PHIEUDATTIEC values (2,'18/02/2002','4','4',2,45,23,3)
+insert into PHIEUDATTIEC values (3,'20/02/2002',N'Võ Văn Ngân',N'Kha Vạn Cân',2,45,23,3)
 select *from PHIEUDATTIEC
 
 
@@ -251,3 +252,6 @@ insert into HOADON values ('17/12/2022',4600,500,1)
 insert into HOADON values ('16/12/2022',1000,500,1)
 insert into HOADON values ('19/12/2022',6111,555,2)
 insert into HOADON values ('31/12/2022',9000,500,1)
+
+Select * FROM PHIEUDATTIEC
+Select MaPhieuDT FROM PHIEUDATTIEC WHERE MaSanh = 1

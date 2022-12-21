@@ -55,7 +55,7 @@ namespace QLTC
             //string query = "Select a.*, p.*from ThongTinDatTiec a left join ThongTinKhachHang p on p.id = a.IDThongTinKhachHang";
             //DataProvider provider = new DataProvider();
             //dataGridViewTraCuuTiecCuoi.DataSource = provider.ExecuteQuery(query);
-            dataGridViewTraCuuTiecCuoi.DataSource = dsPhieu.ListPhieuDatTiec();
+            dataGridViewTraCuuTiecCuoi.DataSource = dsPhieu.ListPhieuDT();
         }
 
         private void radioButtonMaKH_CheckedChanged(object sender, EventArgs e)
@@ -82,8 +82,6 @@ namespace QLTC
 
         private void TraCuuTiecCuoi_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataDichVu.PHIEUDATTIEC' table. You can move, or remove it, as needed.
-            this.pHIEUDATTIECTableAdapter.Fill(this.dataDichVu.PHIEUDATTIEC);
 
         }
 

@@ -15,7 +15,7 @@ namespace QLTC
 {
     public partial class InPhieuDatTiec : Form
     {
-        public string MaKH, ChuRe, CoDau, Sanh, MaPhieu, SoBan, GiaBan, TienCoc, NgayDat;
+        public string MaKH, ChuRe, CoDau, Sanh, MaPhieu, SoBan, TienCoc, NgayDat, MaCa;
 
         private void btnXuat_Click(object sender, EventArgs e)
         {
@@ -26,7 +26,18 @@ namespace QLTC
         {
             InitializeComponent();
         }
-
+        public InPhieuDatTiec(string maphieu, string re, string dau, string sanh, string so, string tien, string ngay, string ca): this()
+        {
+            lbTenChuRe.Text = re;
+            lbTenCoDau.Text = dau;
+            lbSanh.Text = sanh;
+            lbSLBan.Text = so;
+            lbNgayDat.Text = ngay;
+            lbMaCa.Text = ca;
+            MaPhieu = maphieu;
+            IndicateFoodDetail();
+            IndicateServiceDetail();
+        }
         private void Print(Panel panel)
         {
             PrinterSettings ps = new PrinterSettings();
@@ -51,18 +62,6 @@ namespace QLTC
 
         private void InPhieuDatTiec_Load(object sender, EventArgs e)
         {
-            lbMaKH.Text = MaKH;
-            lbTenChuRe.Text = ChuRe;
-            lbTenCoDau.Text = CoDau;
-            lbSanh.Text = Sanh;
-            lbMaPhieu.Text = MaPhieu;
-            lbSLBan.Text = SoBan;
-            lbGiaBan.Text = GiaBan;
-            lbNgayDat.Text = NgayDat;
-            lbTienCoc.Text = TienCoc;
-            IndicateServiceDetail();
-            IndicateFoodDetail();
-            IndicateFoodDetail();
         }
 
         private void IndicateServiceDetail()
@@ -71,7 +70,7 @@ namespace QLTC
             string connectionString = ConfigurationManager.ConnectionStrings["QLTC.Properties.Settings.QLTCConnectionString"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("select DICHVU.MaDichVu, DICHVU.TenDichVu, SoLuong from DICHVU, CT_DICHVU where CT_DICHVU.MaPhieuDT = '" + lbMaPhieu.Text + "' and CT_DICHVU.MaDichVu = DICHVU.MaDichVu", connection))
+                using (SqlCommand cmd = new SqlCommand("select DICHVU.MaDichVu, DICHVU.TenDichVu, SoLuong from DICHVU, CT_DICHVU where CT_DICHVU.MaPhieuDT = '" + MaPhieu + "' and CT_DICHVU.MaDichVu = DICHVU.MaDichVu", connection))
                 {
                     connection.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -90,7 +89,7 @@ namespace QLTC
             string connectionString = ConfigurationManager.ConnectionStrings["QLTC.Properties.Settings.QLTCConnectionString"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("select MONAN.MaMonAn, MONAN.TenMonAn, DonGia from MONAN, CT_MONAN where CT_MONAN.MaPhieuDT = '" + lbMaPhieu.Text + "' and CT_MONAN.MaMonAn = MONAN.MaMonAn", connection))
+                using (SqlCommand cmd = new SqlCommand("select MONAN.MaMonAn, MONAN.TenMonAn, DonGia from MONAN, CT_MONAN where CT_MONAN.MaPhieuDT = '" + MaPhieu + "' and CT_MONAN.MaMonAn = MONAN.MaMonAn", connection))
                 {
                     connection.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
