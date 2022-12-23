@@ -202,5 +202,10 @@ namespace QLTC
             DanhSachDoanhSo ds = new DanhSachDoanhSo();
             ds.ShowDialog();
         }
+
+        private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

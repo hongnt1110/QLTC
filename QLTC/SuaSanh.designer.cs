@@ -96,6 +96,7 @@ namespace QLTC
             this.soLuongBan.Name = "soLuongBan";
             this.soLuongBan.Size = new System.Drawing.Size(129, 26);
             this.soLuongBan.TabIndex = 35;
+            this.soLuongBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.soLuongBan_KeyPress);
             // 
             // loaiSanh
             // 
@@ -180,6 +181,7 @@ namespace QLTC
             this.donGiaBan.Name = "donGiaBan";
             this.donGiaBan.Size = new System.Drawing.Size(301, 26);
             this.donGiaBan.TabIndex = 29;
+            this.donGiaBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.donGiaBan_KeyPress);
             // 
             // label3
             // 

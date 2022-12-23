@@ -87,6 +87,7 @@ namespace QLTC
             this.donGiaDichVu.Name = "donGiaDichVu";
             this.donGiaDichVu.Size = new System.Drawing.Size(301, 26);
             this.donGiaDichVu.TabIndex = 23;
+            this.donGiaDichVu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.donGiaDichVu_KeyPress);
             // 
             // label3
             // 

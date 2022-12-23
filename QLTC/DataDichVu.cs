@@ -14,9 +14,12 @@
     }
 }
 
-namespace QLTC.DataDichVuTableAdapters {
-    
-    
+namespace QLTC.DataDichVuTableAdapters
+{
+    partial class SANHTableAdapter
+    {
+    }
+
     public partial class LOAISANHTableAdapter {
     }
 }

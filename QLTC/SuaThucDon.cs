@@ -34,19 +34,39 @@ namespace QLTC
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            DialogResult xacNhan = MessageBox.Show("Có muốn lưu thay đổi món ăn không?", "Xác nhận lưu món ăn", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (xacNhan == DialogResult.Yes)
+            if (tenMonAn.Text.Replace(" ", "") == "")
             {
-                int gia = (int)Math.Round(float.Parse(donGiaMonAn.Text, CultureInfo.InvariantCulture.NumberFormat));
-                DanhSachMonAn.UpdateThucDon(tenMonAn.Text, gia, int.Parse(maMonAn.Text));
-                MessageBox.Show("Lưu thành công", "Thông Báo", MessageBoxButtons.OK);
-                this.Hide();
+                MessageBox.Show("Vui lòng nhập tên món ăn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else if (donGiaMonAn.Text.Replace(" ", "") == "")
+            {
+                MessageBox.Show("Vui lòng nhập đơn giá món ăn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                DialogResult xacNhan = MessageBox.Show("Có muốn lưu thay đổi món ăn không?", "Xác nhận lưu món ăn", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (xacNhan == DialogResult.Yes)
+                {
+                    int gia = (int)Math.Round(float.Parse(donGiaMonAn.Text, CultureInfo.InvariantCulture.NumberFormat));
+                    DanhSachMonAn.UpdateThucDon(tenMonAn.Text, gia, int.Parse(maMonAn.Text));
+                    MessageBox.Show("Lưu thành công", "Thông Báo", MessageBoxButtons.OK);
+                    this.Hide();
+                }
+            }
+            
         }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void donGiaMonAn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Vui lòng chỉ nhập số", "THÔNG BÁO", MessageBoxButtons.OK);
+                e.Handled = true;
+            }
         }
     }
 }

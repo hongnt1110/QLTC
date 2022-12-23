@@ -98,6 +98,7 @@ namespace QLTC
             this.donGiaBan.Size = new System.Drawing.Size(301, 26);
             this.donGiaBan.TabIndex = 14;
             this.donGiaBan.Text = "Nhập đơn giá bàn";
+            this.donGiaBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.donGiaBan_KeyPress);
             // 
             // label3
             // 
@@ -193,6 +194,7 @@ namespace QLTC
             this.soLuongBan.Size = new System.Drawing.Size(129, 26);
             this.soLuongBan.TabIndex = 20;
             this.soLuongBan.Text = "Nhập số lượng";
+            this.soLuongBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.soLuongBan_KeyPress);
             // 
             // lOAISANHTableAdapter
             // 

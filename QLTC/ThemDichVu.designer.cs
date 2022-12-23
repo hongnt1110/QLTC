@@ -86,6 +86,7 @@ namespace QLTC
             this.donGiaDichVu.Size = new System.Drawing.Size(301, 26);
             this.donGiaDichVu.TabIndex = 14;
             this.donGiaDichVu.Text = "Nhập đơn giá dịch vụ";
+            this.donGiaDichVu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.donGiaDichVu_KeyPress);
             // 
             // label3
             // 

@@ -20,20 +20,24 @@ namespace QLTC
         DataDichVuTableAdapters.LOAISANHTableAdapter DanhSachLoaiSanh = new DataDichVuTableAdapters.LOAISANHTableAdapter();
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (tenSanh.Text == "Nhập tên sảnh")
+            if (tenSanh.Text == "Nhập tên sảnh" || tenSanh.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Vui lòng nhập tên sảnh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (soLuongBan.Text == "Nhập số lượng")
+            else if (soLuongBan.Text == "Nhập số lượng" || soLuongBan.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Vui lòng nhập số lượng bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if(donGiaBan.Text == "Nhập đơn giá bàn")
+            else if(donGiaBan.Text == "Nhập đơn giá bàn" || donGiaBan.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Vui lòng nhập đơn giá bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }else if (ghiChu.Text == "Nhập ghi chú" || ghiChu.Text == "")
+            }else if (ghiChu.Text == "Nhập ghi chú" || ghiChu.Text.Replace(" ","") == "")
             {
                 MessageBox.Show("Vui lòng nhập ghi chú", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (DanhSachSanh.KiemTraSanh(tenSanh.Text).Count != 0)
+            {
+                MessageBox.Show("Sảnh đã tồn tại !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -56,6 +60,24 @@ namespace QLTC
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void soLuongBan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Vui lòng chỉ nhập số", "THÔNG BÁO", MessageBoxButtons.OK);
+                e.Handled = true;
+            }
+        }
+
+        private void donGiaBan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Vui lòng chỉ nhập số", "THÔNG BÁO", MessageBoxButtons.OK);
+                e.Handled = true;
+            }
         }
     }
 }

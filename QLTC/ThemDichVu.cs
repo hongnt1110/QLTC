@@ -19,13 +19,17 @@ namespace QLTC
         DataDichVuTableAdapters.DICHVUTableAdapter DanhSachDichVu = new DataDichVuTableAdapters.DICHVUTableAdapter();
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (tenDichVu.Text == "Nhập tên dịch vụ")
+            if (tenDichVu.Text == "Nhập tên dịch vụ" || tenDichVu.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Vui lòng nhập tên dịch vụ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (donGiaDichVu.Text == "Nhập đơn giá dịch vụ")
+            else if (donGiaDichVu.Text == "Nhập đơn giá dịch vụ" || tenDichVu.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Vui lòng nhập đơn giá dịch vụ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (DanhSachDichVu.KiemTraDichVu(tenDichVu.Text).Count != 0)
+            {
+                MessageBox.Show("Dịch vụ đã tồn tại !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -41,6 +45,13 @@ namespace QLTC
             this.Hide();
         }
 
-        
+        private void donGiaDichVu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Vui lòng chỉ nhập số", "THÔNG BÁO", MessageBoxButtons.OK);
+                e.Handled = true;
+            }
+        }
     }
 }

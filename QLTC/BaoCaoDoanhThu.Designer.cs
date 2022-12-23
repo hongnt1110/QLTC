@@ -92,6 +92,7 @@
             this.dgv1.RowHeadersVisible = false;
             this.dgv1.Size = new System.Drawing.Size(902, 218);
             this.dgv1.TabIndex = 0;
+            this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             // 
             // STT
             // 

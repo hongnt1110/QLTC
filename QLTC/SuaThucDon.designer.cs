@@ -87,6 +87,7 @@ namespace QLTC
             this.donGiaMonAn.Name = "donGiaMonAn";
             this.donGiaMonAn.Size = new System.Drawing.Size(301, 26);
             this.donGiaMonAn.TabIndex = 14;
+            this.donGiaMonAn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.donGiaMonAn_KeyPress);
             // 
             // label3
             // 

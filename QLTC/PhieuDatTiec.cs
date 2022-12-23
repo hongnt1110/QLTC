@@ -34,7 +34,7 @@ namespace QLTC
             string connectionString = ConfigurationManager.ConnectionStrings["QLTC.Properties.Settings.QLTCConnectionString"].ConnectionString;
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand(query, connection);
-          
+            
             connection.Open();
             SqlDataReader rd  = command.ExecuteReader();
             rd.Read();
@@ -242,9 +242,10 @@ namespace QLTC
             if (txbChuRe.Text == string.Empty || txbCodau.Text == string.Empty || tienCoc.Text == string.Empty || txbSLBan.Text == string.Empty)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin để đặt tiệc");
-            }else if (tempMonAn < 5)
+            }
+            else if (tempMonAn < 1)
             {
-                MessageBox.Show("Hãy chọn đủ 5 món ăn !!!", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Hãy chọn món ăn !!!", "Thông báo", MessageBoxButtons.OK);
             }
             else
             {

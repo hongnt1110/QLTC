@@ -61,7 +61,6 @@ namespace QLTC
             this.label3.Size = new System.Drawing.Size(108, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Tên món ăn:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // tenMonAn
             // 
@@ -73,7 +72,6 @@ namespace QLTC
             this.tenMonAn.Size = new System.Drawing.Size(301, 26);
             this.tenMonAn.TabIndex = 3;
             this.tenMonAn.Text = "Nhập tên món ăn";
-            this.tenMonAn.TextChanged += new System.EventHandler(this.tenMonAn_TextChanged);
             // 
             // label4
             // 
@@ -97,6 +95,7 @@ namespace QLTC
             this.donGiaMonAn.Size = new System.Drawing.Size(301, 26);
             this.donGiaMonAn.TabIndex = 5;
             this.donGiaMonAn.Text = "Nhập đơn giá món ăn";
+            this.donGiaMonAn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.donGiaMonAn_KeyPress);
             // 
             // btnThem
             // 

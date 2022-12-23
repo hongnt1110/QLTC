@@ -23,13 +23,17 @@ namespace QLTC
         DataDichVuTableAdapters.MONANTableAdapter DanhSachMonAn = new DataDichVuTableAdapters.MONANTableAdapter();
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if(tenMonAn.Text == "Nhập tên món ăn")
+            if (tenMonAn.Text == "Nhập tên món ăn" || tenMonAn.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Vui lòng nhập tên món ăn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if(donGiaMonAn.Text == "Nhập đơn giá món ăn")
+            else if (donGiaMonAn.Text == "Nhập đơn giá món ăn" || donGiaMonAn.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Vui lòng nhập đơn giá món ăn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (DanhSachMonAn.KiemTraMonAn(tenMonAn.Text).Count != 0)
+            {
+                MessageBox.Show("Món ăn đã tồn tại !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -38,7 +42,7 @@ namespace QLTC
                 DanhSachMonAn.InsertThucDon(monAn, donGia);
                 MessageBox.Show("Thêm món " + monAn + " thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
-            }  
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -46,14 +50,13 @@ namespace QLTC
             this.Hide();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void donGiaMonAn_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-        }
-
-        private void tenMonAn_TextChanged(object sender, EventArgs e)
-        {
-
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Vui lòng chỉ nhập số", "THÔNG BÁO", MessageBoxButtons.OK);
+                e.Handled = true;
+            }
         }
     }
 }
