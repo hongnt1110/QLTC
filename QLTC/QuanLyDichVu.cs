@@ -299,5 +299,82 @@ namespace QLTC
             }
 
         }
+
+        DataDichVuTableAdapters.CATableAdapter DanhSachCa = new DataDichVuTableAdapters.CATableAdapter();
+        private void btnHienThiCa_Click(object sender, EventArgs e)
+        {
+            DataTable listCa = new DataTable();
+            SelectList(listCa, "SELECT MaCa AS N'MÃ CA', LoaiCa AS N'LOẠI CA', ThoiGian AS N'THỜI GIAN' FROM CA");
+            ShowData(listCa, danhSachCa);
+        }
+
+        private void btnThemCa_Click(object sender, EventArgs e)
+        {
+            ThemCa themCa = new ThemCa();
+            themCa.ShowDialog();
+            DataTable listCa = new DataTable();
+            SelectList(listCa, "SELECT MaCa AS N'MÃ CA', LoaiCa AS N'LOẠI CA', ThoiGian AS N'THỜI GIAN' FROM CA");
+            ShowData(listCa, danhSachCa);
+        }
+
+        private void btnSuaCa_Click(object sender, EventArgs e)
+        {
+            if (danhSachCa.CurrentRow == null)
+            {
+                MessageBox.Show("Hãy chọn ca để sửa?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DataTable listCa = new DataTable();
+                SelectList(listCa, "SELECT MaCa AS N'MÃ CA', LoaiCa AS N'LOẠI CA', ThoiGian AS N'THỜI GIAN' FROM CA");
+                ShowData(listCa, danhSachCa);
+            }
+            else
+            {
+                string ma = danhSachCa.CurrentRow.Cells[0].Value.ToString();
+                string ten = danhSachCa.CurrentRow.Cells[1].Value.ToString();
+                string tg = danhSachCa.CurrentRow.Cells[2].Value.ToString();
+                SuaCa suaCa = new SuaCa(ma, ten, tg);
+                suaCa.ShowDialog();
+                DataTable listCa = new DataTable();
+                SelectList(listCa, "SELECT MaCa AS N'MÃ CA', LoaiCa AS N'LOẠI CA', ThoiGian AS N'THỜI GIAN' FROM CA");
+                ShowData(listCa, danhSachCa);
+            }
+        }
+
+        private void btnXoaCa_Click(object sender, EventArgs e)
+        {
+            if (danhSachCa.CurrentRow == null)
+            {
+                MessageBox.Show("Hãy chọn ca để xóa?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DataTable listCa = new DataTable();
+                SelectList(listCa, "SELECT MaCa AS N'MÃ CA', LoaiCa AS N'LOẠI CA', ThoiGian AS N'THỜI GIAN' FROM CA");
+                ShowData(listCa, danhSachCa);
+            }
+            else
+            {
+                int ca = int.Parse(danhSachCa.CurrentRow.Cells[0].Value.ToString());
+                DialogResult xacNhan = MessageBox.Show("Có muốn xóa ca không?", "Xác nhận xóa dịch vụ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (xacNhan == DialogResult.Yes)
+                {
+                    DanhSachCa.DeleteCa(ca);
+                    MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK);
+                    DataTable listCa = new DataTable();
+                    SelectList(listCa, "SELECT MaCa AS N'MÃ CA', LoaiCa AS N'LOẠI CA', ThoiGian AS N'THỜI GIAN' FROM CA");
+                    ShowData(listCa, danhSachCa);
+                }
+            }
+        }
+
+        private void btnTimCa_Click(object sender, EventArgs e)
+        {
+            if (timCa.Text == "Tìm kiếm theo tên ca")
+            {
+                MessageBox.Show("Vui lòng nhập tên ca để tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                DataTable listCa = new DataTable();
+                SelectList(listCa, "SELECT MaCa AS N'MÃ CA', LoaiCa AS N'LOẠI CA', ThoiGian AS N'THỜI GIAN' FROM CA WHERE LoaiCa LIKE '%" + timCa.Text + "%'");
+                ShowData(listCa, danhSachCa);
+            }
+        }
     }
 }

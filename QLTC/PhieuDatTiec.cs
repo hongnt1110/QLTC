@@ -262,13 +262,6 @@ namespace QLTC
 
                 }
     }
-        
-        private void btnCa_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            DanhSachCa ca = new DanhSachCa();
-            ca.ShowDialog();
-        }
         private void btnThoat_Click(object sender, EventArgs e)
         {
             DialogResult xacNhan = MessageBox.Show("Bạn có muốn thoát không?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

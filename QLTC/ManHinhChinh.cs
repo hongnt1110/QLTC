@@ -82,5 +82,12 @@ namespace QLTC
             TraCuuTiecCuoi tc = new TraCuuTiecCuoi();
             tc.ShowDialog();
         }
+
+        private void caToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            QuanLyDichVu quanLyDichVu = new QuanLyDichVu(3);
+            quanLyDichVu.ShowDialog();
+        }
     }
 }

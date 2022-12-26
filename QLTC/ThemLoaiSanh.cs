@@ -19,11 +19,11 @@ namespace QLTC
         DataDichVuTableAdapters.LOAISANHTableAdapter DanhSachLSanh = new DataDichVuTableAdapters.LOAISANHTableAdapter();
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (tenLoaiSanh.Text == "Nhập tên loại sảnh")
+            if (tenLoaiSanh.Text == "Nhập tên loại sảnh" || tenLoaiSanh.Text.Replace(" ","") == "")
             {
                 MessageBox.Show("Vui lòng nhập tên loại sảnh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (donGiaLoaiSanh.Text == "Nhập đơn giá loại sảnh")
+            else if (donGiaLoaiSanh.Text == "Nhập đơn giá loại sảnh" || donGiaLoaiSanh.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Vui lòng nhập đơn giá loại sảnh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -40,6 +40,15 @@ namespace QLTC
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void donGiaLoaiSanh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Vui lòng chỉ nhập số", "THÔNG BÁO", MessageBoxButtons.OK);
+                e.Handled = true;
+            }
         }
     }
 }

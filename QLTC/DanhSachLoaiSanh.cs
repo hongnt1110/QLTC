@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,10 +17,27 @@ namespace QLTC
         {
             InitializeComponent();
         }
+        private void SelectList(DataTable list, string query)
+        {
+            string connectionString = @"Data Source=LUAN-LENOVO\LUANNGUYEN;Initial Catalog=QLTC;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand cmd = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            list.Load(reader);
+            connection.Close();
+        }
+        private void ShowData(DataTable list, DataGridView gridView)
+        {
+            gridView.DataSource = list;
+            gridView.ColumnHeadersDefaultCellStyle.Font = new Font("Roboto", 9, FontStyle.Bold);
+        }
         DataDichVuTableAdapters.LOAISANHTableAdapter DanhSachLSanh = new DataDichVuTableAdapters.LOAISANHTableAdapter();
         private void btnHienThiLoaiSanh_Click(object sender, EventArgs e)
         {
-            danhSachLSanh.DataSource = DanhSachLSanh.ListLoaiSanh();
+            DataTable listLoaiSanh = new DataTable();
+            SelectList(listLoaiSanh, "SELECT MaLoaiSanh AS N'MÃ LOẠI SẢNH', LoaiSanh AS N'LOẠI SẢNH', DonGia AS N'DonGia' FROM LOAISANH");
+            ShowData(listLoaiSanh, danhSachLSanh);
         }
 
         private void btnTimLoaiSanh_Click(object sender, EventArgs e)
@@ -30,7 +48,9 @@ namespace QLTC
             }
             else
             {
-                danhSachLSanh.DataSource = DanhSachLSanh.SearchLoaiSanh('%' + timLoaiSanh.Text + '%');
+                DataTable listLoaiSanh = new DataTable();
+                SelectList(listLoaiSanh, "SELECT MaLoaiSanh AS N'MÃ LOẠI SẢNH', LoaiSanh AS N'LOẠI SẢNH', DonGia AS N'DonGia' FROM LOAISANH WHERE LoaiSanh LIKE '%" + timLoaiSanh.Text + "%'");
+                ShowData(listLoaiSanh, danhSachLSanh);
             }
         }
 
@@ -38,7 +58,9 @@ namespace QLTC
         {
             ThemLoaiSanh loaiSanh = new ThemLoaiSanh();
             loaiSanh.ShowDialog();
-            danhSachLSanh.DataSource = DanhSachLSanh.ListLoaiSanh();
+            DataTable listLoaiSanh = new DataTable();
+            SelectList(listLoaiSanh, "SELECT MaLoaiSanh AS N'MÃ LOẠI SẢNH', LoaiSanh AS N'LOẠI SẢNH', DonGia AS N'DonGia' FROM LOAISANH");
+            ShowData(listLoaiSanh, danhSachLSanh);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -56,7 +78,9 @@ namespace QLTC
             if (danhSachLSanh.CurrentRow == null)
             {
                 MessageBox.Show("Hãy chọn loại sảnh để xóa?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                danhSachLSanh.DataSource = DanhSachLSanh.ListLoaiSanh();
+                DataTable listLoaiSanh = new DataTable();
+                SelectList(listLoaiSanh, "SELECT MaLoaiSanh AS N'MÃ LOẠI SẢNH', LoaiSanh AS N'LOẠI SẢNH', DonGia AS N'DonGia' FROM LOAISANH");
+                ShowData(listLoaiSanh, danhSachLSanh);
             }
             else
             {
@@ -66,7 +90,9 @@ namespace QLTC
                 {
                     DanhSachLSanh.DeleteLoaiSanh(loaiSanh);
                     MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK);
-                    danhSachLSanh.DataSource = DanhSachLSanh.ListLoaiSanh();
+                    DataTable listLoaiSanh = new DataTable();
+                    SelectList(listLoaiSanh, "SELECT MaLoaiSanh AS N'MÃ LOẠI SẢNH', LoaiSanh AS N'LOẠI SẢNH', DonGia AS N'DonGia' FROM LOAISANH");
+                    ShowData(listLoaiSanh, danhSachLSanh);
                 }
             }
             
@@ -77,7 +103,9 @@ namespace QLTC
             if(danhSachLSanh.CurrentRow == null)
             {
                 MessageBox.Show("Hãy chọn loại sảnh để sửa?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                danhSachLSanh.DataSource = DanhSachLSanh.ListLoaiSanh();
+                DataTable listLoaiSanh = new DataTable();
+                SelectList(listLoaiSanh, "SELECT MaLoaiSanh AS N'MÃ LOẠI SẢNH', LoaiSanh AS N'LOẠI SẢNH', DonGia AS N'DonGia' FROM LOAISANH");
+                ShowData(listLoaiSanh, danhSachLSanh);
             }
             else
             {
@@ -86,7 +114,9 @@ namespace QLTC
                 string donGia = danhSachLSanh.CurrentRow.Cells[2].Value.ToString();
                 SuaLoaiSanh suaLSanh = new SuaLoaiSanh(ma, ten, donGia);
                 suaLSanh.ShowDialog();
-                danhSachLSanh.DataSource = DanhSachLSanh.ListLoaiSanh();
+                DataTable listLoaiSanh = new DataTable();
+                SelectList(listLoaiSanh, "SELECT MaLoaiSanh AS N'MÃ LOẠI SẢNH', LoaiSanh AS N'LOẠI SẢNH', DonGia AS N'DonGia' FROM LOAISANH");
+                ShowData(listLoaiSanh, danhSachLSanh);
             }
             
         }

@@ -19,11 +19,11 @@ namespace QLTC
         DataDichVuTableAdapters.CATableAdapter ListCa = new DataDichVuTableAdapters.CATableAdapter();
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (tenCa.Text == "Nhập tên ca")
+            if (tenCa.Text == "Nhập tên ca" || tenCa.Text.Replace(" ","") == "")
             {
                 MessageBox.Show("Vui lòng nhập tên ca", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (thoiGianCa.Text == "Nhập thời gian ca (vd: 9H00 - 12H00)")
+            else if (thoiGianCa.Text == "Nhập thời gian ca (vd: 9H00 - 12H00)" || thoiGianCa.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Vui lòng nhập thời gian ca", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

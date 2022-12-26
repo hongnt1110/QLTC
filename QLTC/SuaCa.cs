@@ -32,13 +32,25 @@ namespace QLTC
         DataDichVuTableAdapters.CATableAdapter ListCa = new DataDichVuTableAdapters.CATableAdapter();
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            DialogResult xacNhan = MessageBox.Show("Có muốn lưu thay đổi ca không?", "Xác nhận lưu sảnh", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (tenCa.Text.Replace(" ", "") == "")
+            {
+                MessageBox.Show("Vui lòng nhập tên ca", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (thoiGianCa.Text.Replace(" ", "") == "")
+            {
+                MessageBox.Show("Vui lòng nhập thời gian ca", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                DialogResult xacNhan = MessageBox.Show("Có muốn lưu thay đổi ca không?", "Xác nhận lưu sảnh", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (xacNhan == DialogResult.Yes)
             {
                 ListCa.UpdateCa(tenCa.Text, thoiGianCa.Text, int.Parse(maCa.Text));
                 MessageBox.Show("Lưu thành công", "Thông Báo", MessageBoxButtons.OK);
                 this.Hide();
             }
+            }
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)

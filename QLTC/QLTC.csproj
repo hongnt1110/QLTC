@@ -109,12 +109,6 @@
     </Compile>
     <Compile Include="BaoCaoNgay.cs" />
     <Compile Include="Conection.cs" />
-    <Compile Include="DanhSachCa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DanhSachCa.Designer.cs">
-      <DependentUpon>DanhSachCa.cs</DependentUpon>
-    </Compile>
     <Compile Include="DanhSachDoanhSo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,9 +267,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCaoDoanhThu.resx">
       <DependentUpon>BaoCaoDoanhThu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DanhSachCa.resx">
-      <DependentUpon>DanhSachCa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhSachDoanhSo.resx">
       <DependentUpon>DanhSachDoanhSo.cs</DependentUpon>

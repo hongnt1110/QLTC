@@ -40,7 +40,6 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnInPhieu = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.btnCa = new System.Windows.Forms.Button();
             this.dICHVUBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sANHTableAdapter = new QLTC.DataDichVuTableAdapters.SANHTableAdapter();
             this.cATableAdapter = new QLTC.DataDichVuTableAdapters.CATableAdapter();
@@ -147,7 +146,6 @@
             this.panel9.Controls.Add(this.btnThoat);
             this.panel9.Controls.Add(this.btnInPhieu);
             this.panel9.Controls.Add(this.btnLuu);
-            this.panel9.Controls.Add(this.btnCa);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel9.Location = new System.Drawing.Point(0, 457);
             this.panel9.Name = "panel9";
@@ -192,19 +190,6 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btnCa
-            // 
-            this.btnCa.BackColor = System.Drawing.Color.White;
-            this.btnCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCa.ForeColor = System.Drawing.Color.Orange;
-            this.btnCa.Location = new System.Drawing.Point(12, 14);
-            this.btnCa.Name = "btnCa";
-            this.btnCa.Size = new System.Drawing.Size(185, 26);
-            this.btnCa.TabIndex = 16;
-            this.btnCa.Text = "Danh sách ca";
-            this.btnCa.UseVisualStyleBackColor = false;
-            this.btnCa.Click += new System.EventHandler(this.btnCa_Click);
             // 
             // dICHVUBindingSource
             // 
@@ -607,7 +592,6 @@
         private System.Windows.Forms.ColumnHeader tenDichVu;
         private System.Windows.Forms.ColumnHeader donGiaDichVu;
         private System.Windows.Forms.BindingSource cABindingSource;
-        private System.Windows.Forms.Button btnCa;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnInPhieu;
         private System.Windows.Forms.Button btnLuu;
