@@ -21,10 +21,7 @@ namespace QLTC
             InitializeComponent();
         }
 
-        private void HoaDon_Load(object sender, EventArgs e)
-        {
-            Display();
-        }
+      
 
         private DataTable GetBiLLList()
         {
@@ -43,25 +40,7 @@ namespace QLTC
             return billList;
         }
 
-        private void dgvHD_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                
-                txbMaHoaDon.Text = dgvHD.SelectedRows[0].Cells[0].Value.ToString();
-                txbMaPhieu.Text = dgvHD.SelectedRows[0].Cells[0].Value.ToString();
-                txbTienCoc.Text = dgvHD.SelectedRows[0].Cells[1].Value.ToString();
-                dtpNgayThanhToan.Text = dgvHD.SelectedRows[0].Cells[2].Value.ToString();
-                txbTongTien.Text = dgvHD.SelectedRows[0].Cells[3].Value.ToString();
-                txbTienCoc.Text = dgvHD.SelectedRows[0].Cells[4].Value.ToString();
-                txbTienPhaiTra.Text = dgvHD.SelectedRows[0].Cells[5].Value.ToString();
-            }
-        }
-
-        private void Display()
-        {
-            dgvHD.DataSource = GetBiLLList();
-        }
+      
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["QLTC.Properties.Settings.QLTCConnectionString"].ConnectionString;
@@ -71,7 +50,6 @@ namespace QLTC
             SqlCommand command = new SqlCommand(query, connection);
             command.ExecuteNonQuery();
             connection.Close();
-            Display();
             MessageBox.Show("Cập nhật thành công!");
             
         }
@@ -99,5 +77,7 @@ namespace QLTC
                 main.ShowDialog();
             }
         }
+
+       
     }
 }
