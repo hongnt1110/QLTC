@@ -30,13 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonThoat = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridViewTraCuuTiecCuoi = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxTiecCuoi = new System.Windows.Forms.TextBox();
-            this.radioButtonMaKH = new System.Windows.Forms.RadioButton();
             this.buttonTim = new System.Windows.Forms.Button();
             this.radioButtonMaDatTiec = new System.Windows.Forms.RadioButton();
             this.dataDichVu = new QLTC.DataDichVu();
@@ -52,18 +53,46 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.radioButton2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.buttonThoat);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textBoxTiecCuoi);
-            this.panel1.Controls.Add(this.radioButtonMaKH);
             this.panel1.Controls.Add(this.buttonTim);
             this.panel1.Controls.Add(this.radioButtonMaDatTiec);
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(909, 423);
             this.panel1.TabIndex = 10;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(392, 86);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(93, 20);
+            this.radioButton1.TabIndex = 16;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Tên cô dâu";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(271, 86);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(88, 20);
+            this.radioButton2.TabIndex = 17;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Tên chú rễ";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // button1
             // 
@@ -133,19 +162,6 @@
             this.textBoxTiecCuoi.Size = new System.Drawing.Size(259, 20);
             this.textBoxTiecCuoi.TabIndex = 1;
             // 
-            // radioButtonMaKH
-            // 
-            this.radioButtonMaKH.AutoSize = true;
-            this.radioButtonMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonMaKH.Location = new System.Drawing.Point(330, 86);
-            this.radioButtonMaKH.Name = "radioButtonMaKH";
-            this.radioButtonMaKH.Size = new System.Drawing.Size(126, 20);
-            this.radioButtonMaKH.TabIndex = 4;
-            this.radioButtonMaKH.TabStop = true;
-            this.radioButtonMaKH.Text = "Tên Khách Hàng";
-            this.radioButtonMaKH.UseVisualStyleBackColor = true;
-            this.radioButtonMaKH.CheckedChanged += new System.EventHandler(this.radioButtonMaKH_CheckedChanged);
-            // 
             // buttonTim
             // 
             this.buttonTim.BackColor = System.Drawing.SystemColors.HighlightText;
@@ -163,12 +179,12 @@
             // 
             this.radioButtonMaDatTiec.AutoSize = true;
             this.radioButtonMaDatTiec.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonMaDatTiec.Location = new System.Drawing.Point(468, 86);
+            this.radioButtonMaDatTiec.Location = new System.Drawing.Point(525, 86);
             this.radioButtonMaDatTiec.Name = "radioButtonMaDatTiec";
-            this.radioButtonMaDatTiec.Size = new System.Drawing.Size(121, 20);
+            this.radioButtonMaDatTiec.Size = new System.Drawing.Size(104, 20);
             this.radioButtonMaDatTiec.TabIndex = 5;
             this.radioButtonMaDatTiec.TabStop = true;
-            this.radioButtonMaDatTiec.Text = "Mã Khách Hàng";
+            this.radioButtonMaDatTiec.Text = "Ngày đãi tiệc";
             this.radioButtonMaDatTiec.UseVisualStyleBackColor = true;
             this.radioButtonMaDatTiec.CheckedChanged += new System.EventHandler(this.radioButtonMaDatTiec_CheckedChanged);
             // 
@@ -212,7 +228,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxTiecCuoi;
-        private System.Windows.Forms.RadioButton radioButtonMaKH;
         private System.Windows.Forms.Button buttonTim;
         private System.Windows.Forms.RadioButton radioButtonMaDatTiec;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -222,5 +237,7 @@
         private DataDichVu dataDichVu;
         private System.Windows.Forms.BindingSource pHIEUDATTIECBindingSource;
         private DataDichVuTableAdapters.PHIEUDATTIECTableAdapter pHIEUDATTIECTableAdapter;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

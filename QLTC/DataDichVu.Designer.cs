@@ -9853,9 +9853,9 @@ WHERE        (kh.TenKH = @TenKH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataDichVu.HOADONDataTable SearchMaKH(int MaKH) {
+        public virtual DataDichVu.HOADONDataTable SearchMaHD(int MaHoaDon) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MaKH));
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MaHoaDon));
             DataDichVu.HOADONDataTable dataTable = new DataDichVu.HOADONDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -9884,13 +9884,13 @@ WHERE        (kh.TenKH = @TenKH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataDichVu.HOADONDataTable SearchTenKH(string TenKH) {
+        public virtual DataDichVu.HOADONDataTable SearchNgay(string NgayThanhToan) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
-            if ((TenKH == null)) {
-                throw new global::System.ArgumentNullException("TenKH");
+            if ((NgayThanhToan == null)) {
+                throw new global::System.ArgumentNullException("NgayThanhToan");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(TenKH));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(NgayThanhToan));
             }
             DataDichVu.HOADONDataTable dataTable = new DataDichVu.HOADONDataTable();
             this.Adapter.Fill(dataTable);
@@ -12894,14 +12894,32 @@ WHERE        (kh.TenKH = @TenKH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataDichVu.PHIEUDATTIECDataTable SearchPhieuTheoMa(int MaKH) {
+        public virtual DataDichVu.PHIEUDATTIECDataTable SearchPhieuTheoTenChuRe(int TenChuRe) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(MaKH));
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TenChuRe));
             DataDichVu.PHIEUDATTIECDataTable dataTable = new DataDichVu.PHIEUDATTIECDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
-        
+
+        public virtual DataDichVu.PHIEUDATTIECDataTable SearchPhieuTheoTenCoDau(int TenCoDau)
+        {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TenCoDau));
+            DataDichVu.PHIEUDATTIECDataTable dataTable = new DataDichVu.PHIEUDATTIECDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+
+        public virtual DataDichVu.PHIEUDATTIECDataTable SearchPhieuTheoNgayDaiTiec(int NgayDaiTiec)
+        {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(NgayDaiTiec));
+            DataDichVu.PHIEUDATTIECDataTable dataTable = new DataDichVu.PHIEUDATTIECDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
@@ -12931,7 +12949,7 @@ WHERE        (kh.TenKH = @TenKH)";
                 throw new global::System.ArgumentNullException("TenKH");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(TenKH));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(TenKH)); 
             }
             DataDichVu.PHIEUDATTIECDataTable dataTable = new DataDichVu.PHIEUDATTIECDataTable();
             this.Adapter.Fill(dataTable);

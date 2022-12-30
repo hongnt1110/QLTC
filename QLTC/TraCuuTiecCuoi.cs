@@ -32,13 +32,17 @@ namespace QLTC
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (radioButtonMaDatTiec.Checked)
+            if (radioButton2.Checked)
             {
-                dataGridViewTraCuuTiecCuoi.DataSource = dsPhieu.SearchPhieuTheoMa(int.Parse(textBoxTiecCuoi.Text));
+                dataGridViewTraCuuTiecCuoi.DataSource = dsPhieu.SearchPhieuTheoTenChuRe(int.Parse(textBoxTiecCuoi.Text));
             }
-            else if (radioButtonMaKH.Checked)
+            else if (radioButton1.Checked)
             {
-                dataGridViewTraCuuTiecCuoi.DataSource = dsPhieu.SearchTenKH(textBoxTiecCuoi.Text);
+                dataGridViewTraCuuTiecCuoi.DataSource = dsPhieu.SearchPhieuTheoTenCoDau(int.Parse(textBoxTiecCuoi.Text));
+            }
+            else if (radioButtonMaDatTiec.Checked)
+            {
+                dataGridViewTraCuuTiecCuoi.DataSource = dsPhieu.SearchPhieuTheoNgayDaiTiec(int.Parse(textBoxTiecCuoi.Text));
             }
             else
             {
@@ -91,6 +95,26 @@ namespace QLTC
         }
 
         private void dataGridViewTraCuuHopDong_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
 
         }

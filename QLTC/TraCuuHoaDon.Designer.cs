@@ -133,12 +133,12 @@
             // 
             this.radioButtonMaKH.AutoSize = true;
             this.radioButtonMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonMaKH.Location = new System.Drawing.Point(245, 78);
+            this.radioButtonMaKH.Location = new System.Drawing.Point(250, 78);
             this.radioButtonMaKH.Name = "radioButtonMaKH";
-            this.radioButtonMaKH.Size = new System.Drawing.Size(121, 20);
+            this.radioButtonMaKH.Size = new System.Drawing.Size(96, 20);
             this.radioButtonMaKH.TabIndex = 4;
             this.radioButtonMaKH.TabStop = true;
-            this.radioButtonMaKH.Text = "Mã Khách Hàng";
+            this.radioButtonMaKH.Text = "Mã hóa đơn";
             this.radioButtonMaKH.UseVisualStyleBackColor = true;
             this.radioButtonMaKH.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
@@ -159,13 +159,14 @@
             // 
             this.radioButtonTenKH.AutoSize = true;
             this.radioButtonTenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonTenKH.Location = new System.Drawing.Point(378, 78);
+            this.radioButtonTenKH.Location = new System.Drawing.Point(380, 78);
             this.radioButtonTenKH.Name = "radioButtonTenKH";
-            this.radioButtonTenKH.Size = new System.Drawing.Size(126, 20);
+            this.radioButtonTenKH.Size = new System.Drawing.Size(122, 20);
             this.radioButtonTenKH.TabIndex = 5;
             this.radioButtonTenKH.TabStop = true;
-            this.radioButtonTenKH.Text = "Tên Khách Hàng";
+            this.radioButtonTenKH.Text = "Ngày thanh toán";
             this.radioButtonTenKH.UseVisualStyleBackColor = true;
+            this.radioButtonTenKH.CheckedChanged += new System.EventHandler(this.radioButtonTenKH_CheckedChanged);
             // 
             // TraCuuHoaDon
             // 
@@ -194,6 +195,7 @@
         private System.Windows.Forms.RadioButton radioButtonMaKH;
         private System.Windows.Forms.Button buttonTim;
         private System.Windows.Forms.RadioButton radioButtonTenKH;
+        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridViewTraCuuHoaDon;
         private System.Windows.Forms.Button button5;

@@ -77,13 +77,13 @@ namespace QLTC
 
         private void buttonTim_Click(object sender, EventArgs e)
         {
-            if (radioButtonMaKH.Checked)
+            if (radioButton1.Checked)
             {
-                dataGridViewTraCuuHoaDon.DataSource = hoaDon.SearchMaKH(int.Parse(textBoxTimHoaDon.Text));
+                dataGridViewTraCuuHoaDon.DataSource = hoaDon.SearchMaHD(int.Parse(textBoxTimHoaDon.Text));
             }
             else if (radioButtonTenKH.Checked)
             {
-                dataGridViewTraCuuHoaDon.DataSource = hoaDon.SearchTenKH(textBoxTimHoaDon.Text);
+                dataGridViewTraCuuHoaDon.DataSource = hoaDon.SearchNgay(textBoxTimHoaDon.Text);
             }
             else
             {
@@ -129,6 +129,11 @@ namespace QLTC
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonTenKH_CheckedChanged(object sender, EventArgs e)
         {
 
         }
