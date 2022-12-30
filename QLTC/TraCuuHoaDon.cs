@@ -77,11 +77,12 @@ namespace QLTC
 
         private void buttonTim_Click(object sender, EventArgs e)
         {
-            if (radioButton1.Checked)
+            if (radioButtonMaHD.Checked)
             {
+
                 dataGridViewTraCuuHoaDon.DataSource = hoaDon.SearchMaHD(int.Parse(textBoxTimHoaDon.Text));
             }
-            else if (radioButtonTenKH.Checked)
+            else if (radioButtonNgay.Checked)
             {
                 dataGridViewTraCuuHoaDon.DataSource = hoaDon.SearchNgay(textBoxTimHoaDon.Text);
             }

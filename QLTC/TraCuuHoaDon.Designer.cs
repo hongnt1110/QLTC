@@ -35,9 +35,9 @@
             this.button5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxTimHoaDon = new System.Windows.Forms.TextBox();
-            this.radioButtonMaKH = new System.Windows.Forms.RadioButton();
+            this.radioButtonMaHD = new System.Windows.Forms.RadioButton();
             this.buttonTim = new System.Windows.Forms.Button();
-            this.radioButtonTenKH = new System.Windows.Forms.RadioButton();
+            this.radioButtonNgay = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTraCuuHoaDon)).BeginInit();
@@ -51,9 +51,9 @@
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textBoxTimHoaDon);
-            this.panel1.Controls.Add(this.radioButtonMaKH);
+            this.panel1.Controls.Add(this.radioButtonMaHD);
             this.panel1.Controls.Add(this.buttonTim);
-            this.panel1.Controls.Add(this.radioButtonTenKH);
+            this.panel1.Controls.Add(this.radioButtonNgay);
             this.panel1.Location = new System.Drawing.Point(2, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(724, 417);
@@ -129,18 +129,18 @@
             this.textBoxTimHoaDon.TabIndex = 1;
             this.textBoxTimHoaDon.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // radioButtonMaKH
+            // radioButtonMaHD
             // 
-            this.radioButtonMaKH.AutoSize = true;
-            this.radioButtonMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonMaKH.Location = new System.Drawing.Point(250, 78);
-            this.radioButtonMaKH.Name = "radioButtonMaKH";
-            this.radioButtonMaKH.Size = new System.Drawing.Size(96, 20);
-            this.radioButtonMaKH.TabIndex = 4;
-            this.radioButtonMaKH.TabStop = true;
-            this.radioButtonMaKH.Text = "Mã hóa đơn";
-            this.radioButtonMaKH.UseVisualStyleBackColor = true;
-            this.radioButtonMaKH.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButtonMaHD.AutoSize = true;
+            this.radioButtonMaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonMaHD.Location = new System.Drawing.Point(250, 78);
+            this.radioButtonMaHD.Name = "radioButtonMaHD";
+            this.radioButtonMaHD.Size = new System.Drawing.Size(97, 20);
+            this.radioButtonMaHD.TabIndex = 4;
+            this.radioButtonMaHD.TabStop = true;
+            this.radioButtonMaHD.Text = "Mã hóa đơn";
+            this.radioButtonMaHD.UseVisualStyleBackColor = true;
+            this.radioButtonMaHD.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // buttonTim
             // 
@@ -155,18 +155,18 @@
             this.buttonTim.UseVisualStyleBackColor = false;
             this.buttonTim.Click += new System.EventHandler(this.buttonTim_Click);
             // 
-            // radioButtonTenKH
+            // radioButtonNgay
             // 
-            this.radioButtonTenKH.AutoSize = true;
-            this.radioButtonTenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonTenKH.Location = new System.Drawing.Point(380, 78);
-            this.radioButtonTenKH.Name = "radioButtonTenKH";
-            this.radioButtonTenKH.Size = new System.Drawing.Size(122, 20);
-            this.radioButtonTenKH.TabIndex = 5;
-            this.radioButtonTenKH.TabStop = true;
-            this.radioButtonTenKH.Text = "Ngày thanh toán";
-            this.radioButtonTenKH.UseVisualStyleBackColor = true;
-            this.radioButtonTenKH.CheckedChanged += new System.EventHandler(this.radioButtonTenKH_CheckedChanged);
+            this.radioButtonNgay.AutoSize = true;
+            this.radioButtonNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonNgay.Location = new System.Drawing.Point(380, 78);
+            this.radioButtonNgay.Name = "radioButtonNgay";
+            this.radioButtonNgay.Size = new System.Drawing.Size(123, 20);
+            this.radioButtonNgay.TabIndex = 5;
+            this.radioButtonNgay.TabStop = true;
+            this.radioButtonNgay.Text = "Ngày thanh toán";
+            this.radioButtonNgay.UseVisualStyleBackColor = true;
+            this.radioButtonNgay.CheckedChanged += new System.EventHandler(this.radioButtonTenKH_CheckedChanged);
             // 
             // TraCuuHoaDon
             // 
@@ -192,9 +192,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxTimHoaDon;
-        private System.Windows.Forms.RadioButton radioButtonMaKH;
+        private System.Windows.Forms.RadioButton radioButtonMaHD;
         private System.Windows.Forms.Button buttonTim;
-        private System.Windows.Forms.RadioButton radioButtonTenKH;
+        private System.Windows.Forms.RadioButton radioButtonNgay;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridViewTraCuuHoaDon;

@@ -47,16 +47,8 @@ CREATE TABLE CA(
 	ThoiGian	nvarchar (50) not null,
 	CONSTRAINT PK_Ca PRIMARY KEY (MaCa)
 )
-CREATE TABLE KHACHHANG(
-	MaKH	int identity(1,1) not null,
-	TenKH	nvarchar(100) not null,
-	DiaChi	nvarchar(300) not null,
-	SoDienThoai	varchar(11) not null,
-	CONSTRAINT PK_KHACHHANG PRIMARY KEY (MaKH)
-)
 CREATE TABLE PHIEUDATTIEC(
 	MaPhieuDT	int identity(1,1) not null,
-	MaKH	int not null,
 	NgayDaiTiec	date not null,
 	TenChuRe nvarchar (100) not null,
 	TenCoDau nvarchar (100) not null,
@@ -255,3 +247,5 @@ insert into HOADON values ('31/12/2022',9000,500,1)
 
 Select * FROM PHIEUDATTIEC
 Select MaPhieuDT FROM PHIEUDATTIEC WHERE MaSanh = 1
+
+Select MAX(MaPhieuDT) FROM PHIEUDATTIEC

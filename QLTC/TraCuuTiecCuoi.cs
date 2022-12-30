@@ -34,15 +34,15 @@ namespace QLTC
         {
             if (radioButton2.Checked)
             {
-                dataGridViewTraCuuTiecCuoi.DataSource = dsPhieu.SearchPhieuTheoTenChuRe(int.Parse(textBoxTiecCuoi.Text));
+                dataGridViewTraCuuTiecCuoi.DataSource = dsPhieu.SearchChuRe(textBoxTiecCuoi.Text);
             }
             else if (radioButton1.Checked)
             {
-                dataGridViewTraCuuTiecCuoi.DataSource = dsPhieu.SearchPhieuTheoTenCoDau(int.Parse(textBoxTiecCuoi.Text));
+                dataGridViewTraCuuTiecCuoi.DataSource = dsPhieu.SearchCoDau(textBoxTiecCuoi.Text);
             }
             else if (radioButtonMaDatTiec.Checked)
             {
-                dataGridViewTraCuuTiecCuoi.DataSource = dsPhieu.SearchPhieuTheoNgayDaiTiec(int.Parse(textBoxTiecCuoi.Text));
+                dataGridViewTraCuuTiecCuoi.DataSource = dsPhieu.SearchNgayDaiTiec(textBoxTiecCuoi.Text);
             }
             else
             {

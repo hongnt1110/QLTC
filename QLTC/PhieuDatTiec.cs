@@ -30,28 +30,23 @@ namespace QLTC
         DataDichVuTableAdapters.PHIEUDATTIECTableAdapter Phieu = new DataDichVuTableAdapters.PHIEUDATTIECTableAdapter();
         private void AddPartyBooking()
         {
-            string query = "Select MaKH FROM KHACHHANG WHERE SoDienThoai = " + "'" + soDienThoaiKH.Text + "'";
             string connectionString = ConfigurationManager.ConnectionStrings["QLTC.Properties.Settings.QLTCConnectionString"].ConnectionString;
             SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(query, connection);
-            
             connection.Open();
-            SqlDataReader rd  = command.ExecuteReader();
-            rd.Read();
-            string maKH = rd[0].ToString();
             int maSanh = int.Parse(cbbSanh.SelectedValue.ToString());
             int maCa = int.Parse(cbbMaCa.SelectedValue.ToString());
             int sl = int.Parse(txbSLBan.Text);
             decimal tien = decimal.Parse(tienCoc.Text);
             connection.Close();
-            Phieu.InsertPhieuDatTiec(int.Parse(maKH), dateTimePicker1.Value.ToString(), txbChuRe.Text, txbCodau.Text, maSanh, tien, sl, maCa);
+            connection.Open();
+            Phieu.InsertPhieuDT(dateTimePicker1.Value.ToString(), txbChuRe.Text, txbCodau.Text, maSanh, tien, sl, maCa);
         }
         private void AddingIntoCT_MonAn()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["QLTC.Properties.Settings.QLTCConnectionString"].ConnectionString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
-            string query = "Select MaPhieuDT FROM PHIEUDATTIEC WHERE TenChuRe = '" + txbChuRe.Text + "' AND TenCoDau = '" + txbCodau.Text + "'";
+            string query = "Select MAX(MaPhieuDT) FROM PHIEUDATTIEC";
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader rd = command.ExecuteReader();
             rd.Read();
@@ -78,7 +73,7 @@ namespace QLTC
             string connectionString = ConfigurationManager.ConnectionStrings["QLTC.Properties.Settings.QLTCConnectionString"].ConnectionString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
-            string query = "Select MaPhieuDT FROM PHIEUDATTIEC WHERE TenChuRe = '" + txbChuRe.Text + "' AND TenCoDau = '" + txbCodau.Text + "'";
+            string query = "Select MAX(MaPhieuDT) FROM PHIEUDATTIEC";
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader rd = command.ExecuteReader();
             rd.Read();
@@ -221,7 +216,7 @@ namespace QLTC
             string connectionString = ConfigurationManager.ConnectionStrings["QLTC.Properties.Settings.QLTCConnectionString"].ConnectionString;
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
-            string query = "Select MaPhieuDT FROM PHIEUDATTIEC WHERE TenChuRe = '" + txbChuRe.Text + "' AND TenCoDau = '" + txbCodau.Text + "'";
+            string query = "Select MAX(MaPhieuDT) AS MaPhieu FROM PHIEUDATTIEC";
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader rd = command.ExecuteReader();
             rd.Read();
@@ -249,6 +244,29 @@ namespace QLTC
             }
             else
             {
+                //string test;
+                //string query = "Select * FROM PHIEUDATTIEC WHERE NgayDaiTiec = '" + dateTimePicker1.Text.ToString() + "' AND MaSanh = " + cbbSanh.SelectedValue.ToString() + "AND MaCa = " + cbbMaCa.SelectedValue.ToString();
+                //string connectionString = @"Data Source=LUAN-LENOVO\LUANNGUYEN;Initial Catalog=QLTC;Integrated Security=True";
+                //SqlConnection connection = new SqlConnection(connectionString);
+                //SqlCommand cmd = new SqlCommand(query, connection);
+                //connection.Open();
+                //SqlDataReader reader = cmd.ExecuteReader();
+                //reader.Read();
+                //if(reader[0].ToString() != null)
+                //{
+                //    test = null;
+                //}
+                //else
+                //{
+                //    test = reader[0].ToString();
+                //}
+
+                //connection.Close();
+                //if (test != null)
+                //{
+                //    MessageBox.Show("Lịch đã tồn tại !!!", "Phiếu đặt tiệc", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //}
+                
                 var informMessage = MessageBox.Show("Bạn muốn lưu phiếu đặt tiệc với các thông tin ?", "Phiếu đặt tiệc", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (informMessage == DialogResult.Yes)
                 {
@@ -259,8 +277,8 @@ namespace QLTC
                     MessageBox.Show("Đã lưu thành công!", "Thành Công", MessageBoxButtons.OK);
                     btnInPhieu.Enabled = true;
                 }
-
-                }
+                
+               }
     }
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -270,6 +288,33 @@ namespace QLTC
                 this.Hide();
                 ManHinhChinh main = new ManHinhChinh();
                 main.ShowDialog();
+            }
+        }
+
+        private void txbSLBan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Vui lòng chỉ nhập số", "THÔNG BÁO", MessageBoxButtons.OK);
+                e.Handled = true;
+            }
+        }
+
+        private void tienCoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Vui lòng chỉ nhập số", "THÔNG BÁO", MessageBoxButtons.OK);
+                e.Handled = true;
+            }
+        }
+
+        private void soDienThoaiKH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Vui lòng chỉ nhập số", "THÔNG BÁO", MessageBoxButtons.OK);
+                e.Handled = true;
             }
         }
     }

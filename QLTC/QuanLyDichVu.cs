@@ -260,7 +260,7 @@ namespace QLTC
         {
             if (danhSachSanh.CurrentRow == null)
             {
-                MessageBox.Show("Hãy chọn sảnh để xóa?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Hãy chọn sảnh để sửa?", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DataTable listSanh = new DataTable();
                 SelectList(listSanh, "SELECT s.MaSanh AS N'MÃ SẢNH', s.TenSanh AS N'TÊN SẢNH', ls.LoaiSanh AS N'LOẠI SẢNH', s.SoLuongBanToiDa AS N'SỐ LƯỢNG BÀN TỐI ĐA', s.DonGiaBanToiThieu AS N'ĐƠN GIÁ BÀN TỐI THIỂU', s.Ghichu AS 'GHI CHÚ'FROM SANH s, LOAISANH ls WHERE s.MaLoaiSanh = ls.MaLoaiSanh");
                 ShowData(listSanh, danhSachSanh);
